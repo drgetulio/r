@@ -337,3 +337,11 @@ code, .spell {
 .key .m { display: block; font-size: 7.8pt; color: var(--wine); margin-top: 1px; }
 .key.util { border-color: #a99bc0; background: #f4f1f8; }
 .key.free { border-style: dashed; border-color: #c9c0b5; background: #fbfaf8; }
+
+.numpad-wrap { display: grid; grid-template-columns: 58% 1fr; gap: 12px; align-items: start; break-inside: avoid; }
+.numpad { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(44px, auto); gap: 5px; font-family: "Inter", sans-serif; }
+.numpad .key { padding: 4px 6px; min-height: 0; }
+.numpad .key.hot { border-width: 2px; border-color: var(--wine); }
+.numpad-side { display: grid; gap: 5px; font-family: "Inter", sans-serif; }
+.numpad-side .key { padding: 4px 6px; min-height: 0; }
+.numpad-side p { margin-top: 2px; }
