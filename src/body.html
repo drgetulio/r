@@ -45,9 +45,9 @@
     <div class="toc-row"><span class="n">01</span><span class="t">Arquitetura de atalhos<span class="d">Teclado dividido por função, multi-ações e configurações do cliente.</span></span></div>
     <div class="toc-row"><span class="n">02</span><span class="t">O ciclo de dois segundos<span class="d">Rotações de ataque, combos simultâneos e geometria de lure.</span></span></div>
     <div class="toc-row"><span class="n">03</span><span class="t">Cura em camadas por limiar<span class="d">Regras de decisão para poções, magias de cura e emergências.</span></span></div>
-    <div class="toc-row"><span class="n">04</span><span class="t">Rota de caça, níveis 230 a 250<span class="d">Consolidação com risco baixo e lucro estável.</span></span></div>
-    <div class="toc-row"><span class="n">05</span><span class="t">Rota de caça, níveis 250 a 275<span class="d">Transição para spawns de maior densidade.</span></span></div>
-    <div class="toc-row"><span class="n">06</span><span class="t">Rota de caça, níveis 275 a 300<span class="d">Spawns de alta experiência com controle de dano elemental.</span></span></div>
+    <div class="toc-row"><span class="n">04</span><span class="t">Rota de caça, níveis 230 a 250<span class="d">Oito hunts de risco baixo e o equipamento da fase.</span></span></div>
+    <div class="toc-row"><span class="n">05</span><span class="t">Rota de caça, níveis 250 a 275<span class="d">Oito hunts de maior densidade e o equipamento da fase.</span></span></div>
+    <div class="toc-row"><span class="n">06</span><span class="t">Rota de caça, níveis 275 a 300<span class="d">Oito hunts de alta XP, solo e em grupo, e o equipamento da fase.</span></span></div>
     <div class="toc-row"><span class="n">07</span><span class="t">Equipamento, imbuements e Forge<span class="d">O que comprar, em que ordem e quanto levar por sessão.</span></span></div>
     <div class="toc-row"><span class="n">08</span><span class="t">Build passiva<span class="d">Wheel of Destiny, gemas, charms e Prey.</span></span></div>
     <div class="toc-row"><span class="n">09</span><span class="t">Multiplicadores e calendário de XP<span class="d">Stamina, boosts, criatura do dia e treino offline.</span></span></div>
@@ -61,47 +61,49 @@
     <div class="strategy-num">01</div>
     <div><div class="kicker">Estratégia</div><h1>Arquitetura de atalhos</h1></div>
   </div>
-  <p class="lead">O teclado como painel: cada região corresponde a uma função e a mão encontra a tecla certa sem ajuda dos olhos.</p>
+  <p class="lead">O teclado como painel: cada região tem uma função e a mão encontra a tecla certa sem ajuda dos olhos.</p>
 
   <div class="objective">
     <div><b>Objetivo</b><span>Reduzir o tempo entre a percepção do perigo e a resposta, eliminando erros de tecla em momentos de pressão.</span></div>
     <div><b>Fundamento</b><span>Agrupar ações por função (ataque, cura, suporte, equipamento) cria memória motora estável e evita que uma tecla de ataque seja pressionada quando a necessidade é curar.</span></div>
   </div>
 
-  <h3>Mapa recomendado (movimento pelas setas, chat desligado)</h3>
+  <h3>Mapa recomendado (mão esquerda em WASD, mão direita no mouse)</h3>
   <div class="keyboard">
     <div class="key atk"><span class="k">1</span><span class="a">Multi-ação: área cercado</span></div>
     <div class="key atk"><span class="k">2</span><span class="a">Multi-ação: área alinhada</span></div>
     <div class="key atk"><span class="k">3</span><span class="a">Multi-ação: alvo único e boss</span></div>
     <div class="key atk"><span class="k">4</span><span class="a">exori gran ico (manual)</span></div>
     <div class="key atk"><span class="k">5</span><span class="a">exori amp kor (quando liberado)</span></div>
-    <div class="key atk"><span class="k">6</span><span class="a">exori hur (alvo à distância)</span></div>
+    <div class="key atk"><span class="k">X</span><span class="a">exori hur (alvo à distância)</span></div>
 
-    <div class="key heal"><span class="k">Q</span><span class="a">exura ico; no 300, exura med ico</span></div>
-    <div class="key heal"><span class="k">W</span><span class="a">Ultimate Health Potion em si</span></div>
-    <div class="key heal"><span class="k">E</span><span class="a">Strong Mana Potion em si</span></div>
-    <div class="key heal"><span class="k">R</span><span class="a">Supreme Health Potion em si</span></div>
+    <div class="key heal"><span class="k">Espaço</span><span class="a">exura ico; no 300, exura med ico</span></div>
+    <div class="key heal"><span class="k">R</span><span class="a">Ultimate Health Potion em si</span></div>
+    <div class="key heal"><span class="k">F</span><span class="a">Strong Mana Potion em si</span></div>
+    <div class="key heal"><span class="k">V</span><span class="a">Supreme Health Potion em si</span></div>
     <div class="key heal"><span class="k">T</span><span class="a">exura gran ico (emergência)</span></div>
-    <div class="key heal"><span class="k">Y</span><span class="a">Rotworm Stew ou Hydra Tongue Salad</span></div>
+    <div class="key heal"><span class="k">Shift+F</span><span class="a">utura gran (entre packs)</span></div>
 
-    <div class="key sup"><span class="k">A</span><span class="a">utito tempo</span></div>
-    <div class="key sup"><span class="k">S</span><span class="a">utamo tempo</span></div>
-    <div class="key sup"><span class="k">D</span><span class="a">exeta res</span></div>
-    <div class="key sup"><span class="k">F</span><span class="a">exeta amp res</span></div>
+    <div class="key sup"><span class="k">F1</span><span class="a">utito tempo</span></div>
+    <div class="key sup"><span class="k">F2</span><span class="a">utamo tempo</span></div>
+    <div class="key sup"><span class="k">F3</span><span class="a">exeta res</span></div>
+    <div class="key sup"><span class="k">F4</span><span class="a">exeta amp res</span></div>
     <div class="key sup"><span class="k">G</span><span class="a">utani tempo hur (fuga e reposicionamento)</span></div>
-    <div class="key sup"><span class="k">H</span><span class="a">utani hur</span></div>
+    <div class="key sup"><span class="k">B</span><span class="a">utani hur</span></div>
 
     <div class="key eq"><span class="k">Shift+1</span><span class="a">Equipar Stone Skin Amulet</span></div>
     <div class="key eq"><span class="k">Shift+2</span><span class="a">Equipar Might Ring</span></div>
     <div class="key eq"><span class="k">Shift+3</span><span class="a">Recolocar amuleto e anel de caça</span></div>
-    <div class="key eq"><span class="k">Shift+Q</span><span class="a">uteta res eq (Avatar of Steel)</span></div>
-    <div class="key eq"><span class="k">Shift+W</span><span class="a">utura gran</span></div>
+    <div class="key eq"><span class="k">Shift+Espaço</span><span class="a">uteta res eq (Avatar of Steel)</span></div>
+    <div class="key eq"><span class="k">Shift+V</span><span class="a">Rotworm Stew ou Hydra Tongue Salad</span></div>
     <div class="key eq"><span class="k">Tab</span><span class="a">Selecionar próximo alvo</span></div>
   </div>
-  <div class="legend"><i style="background:#fcf4f3;border:1px solid #c98f8f"></i>Ataque <i style="background:#f2f8f4;border:1px solid #93b9a0"></i>Cura <i style="background:#fbf7ec;border:1px solid #c4ac74"></i>Suporte <i style="background:#f2f5f8;border:1px solid #9aa7b6"></i>Equipamento e utilidades. <b>Variante WASD:</b> como Q, E, Z e C viram diagonais, mova a cura para F1 a F5 e o suporte para R, F, G, T, V e B, mantendo a mesma lógica de regiões.</div>
+  <div class="legend"><i style="background:#fcf4f3;border:1px solid #c98f8f"></i>Ataque <i style="background:#f2f8f4;border:1px solid #93b9a0"></i>Cura <i style="background:#fbf7ec;border:1px solid #c4ac74"></i>Suporte <i style="background:#f2f5f8;border:1px solid #9aa7b6"></i>Equipamento e utilidades</div>
+
+  <p><b>Lógica por dedo.</b> Com anelar, médio e indicador em A, W, S e D, apenas o polegar e o mínimo ficam livres enquanto o personagem anda. Por isso a cura por magia está no <kbd>Espaço</kbd> (polegar) e o alvo e os modificadores em <kbd>Tab</kbd> e <kbd>Shift</kbd> (mínimo). As poções formam a coluna do indicador, que sai do D com um movimento curto: <kbd>R</kbd> para vida, <kbd>F</kbd> para mana e <kbd>V</kbd> para vida forte. O ataque fica nos números porque é usado com o personagem parado no pack, quando os dedos deixam o WASD. As teclas <kbd>Q</kbd>, <kbd>E</kbd>, <kbd>Z</kbd> e <kbd>C</kbd> permanecem sem atalho, pois o cliente as usa como diagonais.</p>
 
   <h3>Configuração das multi-ações</h3>
-  <p>O cliente permite atribuir até três ações a um único botão da barra de ação (clique direito no botão e opção de atribuir multi-ação). A cada acionamento, o botão executa a primeira ação que não está em cooldown, e o ícone passa a indicar a próxima. Para o Elite Knight, isso transforma uma rotação de três magias em uma única tecla, liberando a outra mão e a atenção para a cura.</p>
+  <p>O cliente aceita até três ações em um único botão da barra de ação (clique direito e opção de atribuir multi-ação). A cada acionamento, o botão executa a primeira ação fora de cooldown, o que transforma a rotação inteira em uma só tecla.</p>
   <table>
     <thead><tr><th>Tecla</th><th>Prioridade 1</th><th>Prioridade 2</th><th>Prioridade 3</th><th>Quando usar</th></tr></thead>
     <tbody>
@@ -114,8 +116,7 @@
   <h3>Ajustes do cliente que fazem diferença</h3>
   <ol class="steps">
     <li>Configure todas as poções como <b>usar em si mesmo</b> (a mira manual custa tempo e gera erros) e mantenha a barra de ataque, com cooldowns visíveis, logo acima da janela do jogo.</li>
-    <li>Use o modo de chat desligado como padrão. Com o chat ligado, letras deixam de funcionar como atalho e uma tecla de cura pode virar texto no canal.</li>
-    <li>Abra o Hunting Session Analyser e o Impact Analyser em todas as sessões e crie, na Battle List, um filtro que mostre apenas jogadores, útil em mundos Open PvP.</li>
+    <li>Mantenha o chat desligado com movimento em WASD. Com o chat ligado, as letras viram texto e o personagem para de andar; use <kbd>Enter</kbd> apenas para escrever e volte ao modo de caça logo depois.</li>
   </ol>
 
 
@@ -136,7 +137,7 @@
   </div>
 
   <h3>O combo básico</h3>
-  <p>Como os três grupos são independentes, cada janela de 2 segundos comporta uma magia de ataque, até duas magias de cura e até duas poções. Na prática, o ritmo de caça de um Elite Knight bem treinado é uma sequência curta e repetida: <kbd>1</kbd> ou <kbd>2</kbd> (ataque), <kbd>Q</kbd> (cura por magia) e <kbd>E</kbd> ou <kbd>W</kbd> (poção conforme a necessidade). Quem pressiona apenas o ataque e cura somente quando a vida cai está desperdiçando metade da capacidade de sustentação do personagem.</p>
+  <p>Como os três grupos são independentes, cada janela de 2 segundos comporta uma magia de ataque, até duas magias de cura e até duas poções. Na prática, o ritmo de caça de um Elite Knight bem treinado é uma sequência curta e repetida: <kbd>1</kbd> ou <kbd>2</kbd> (ataque), <kbd>Espaço</kbd> (cura por magia, com o polegar) e <kbd>F</kbd> ou <kbd>R</kbd> (poção conforme a necessidade). Quem pressiona apenas o ataque e cura somente quando a vida cai está desperdiçando metade da capacidade de sustentação do personagem.</p>
 
   <h3>Rotação para criaturas ao redor (tecla 1)</h3>
   <div class="timeline">
@@ -191,7 +192,7 @@
   </div>
 
   <table>
-    <thead><tr><th>Faixa de vida</th><th>Exemplo no nível 250</th><th>Magia de cura (Q, T)</th><th>Poção (W, E, R)</th><th>Conduta</th></tr></thead>
+    <thead><tr><th>Faixa de vida</th><th>Exemplo no nível 250</th><th>Magia de cura (Espaço, T)</th><th>Poção (R, F, V)</th><th>Conduta</th></tr></thead>
     <tbody>
       <tr><td><span class="tag low">acima de 85%</span></td><td>mais de 3.240</td><td>exura ico se houver dano contínuo</td><td>Strong Mana Potion se a mana estiver abaixo de 80%</td><td>Rotação completa, Blood Rage ativo.</td></tr>
       <tr><td><span class="tag low">70% a 85%</span></td><td>2.670 a 3.240</td><td>exura ico a cada segundo</td><td>Strong Mana Potion</td><td>Mantenha o lure.</td></tr>
@@ -206,7 +207,7 @@
   <ol class="steps">
     <li><b>Piso de mana de 35%.</b> Abaixo disso, o personagem perde ao mesmo tempo a rotação de ataque e a cura por magia. Se a mana chegar a esse ponto com a vida acima de 70%, use duas Strong Mana Potion seguidas antes de voltar à rotação.</li>
     <li><b>Exura gran ico é reserva, não rotina.</b> Com cooldown de cerca de 10 minutos, deve ser usada apenas na faixa vermelha. Se foi usada mais de uma vez em uma hora, o lure está acima da capacidade do personagem.</li>
-    <li><b>No nível 300, troque exura ico por exura med ico (Fair Wound Cleansing)</b> na tecla <kbd>Q</kbd>. A cura por segundo aumenta sem alterar a memória motora construída até ali.</li>
+    <li><b>No nível 300, troque exura ico por exura med ico (Fair Wound Cleansing)</b> no <kbd>Espaço</kbd>. A cura por segundo aumenta sem alterar a memória motora construída até ali.</li>
     <li><b>Gift of Life é o último seguro.</b> Quando liberado na Wheel, ele impede uma morte por dano letal, com longo tempo de recarga. Se ele disparou, encerre o pack, reponha a vida e reavalie o lure antes de continuar.</li>
     <li><b>Ultimate ou Supreme.</b> A Supreme Health Potion cura entre 875 e 1.125 pontos por uso, o que corresponde a algo como 25% da vida no intervalo. Como a exaustão é a mesma, ela entrega mais cura por segundo; a Ultimate Health Potion é a escolha econômica para a faixa amarela.</li>
   </ol>
@@ -225,35 +226,57 @@
     <div class="strategy-num">04</div>
     <div><div class="kicker">Estratégia</div><h1>Rota de caça, níveis 230 a 250</h1></div>
   </div>
-  <p class="lead">Fase de consolidação: o foco é transformar a configuração das três primeiras estratégias em hábito, com risco baixo e lucro suficiente para financiar a Forge e os imbuements.</p>
+  <p class="lead">Fase de consolidação: transformar a configuração das três primeiras estratégias em hábito, com risco baixo e lucro suficiente para financiar a Forge e os imbuements.</p>
 
   <div class="objective">
-    <div><b>Objetivo</b><span>Acumular os 56,7 milhões de XP desta fase com saldo positivo de gold, preparando o capital para a fase seguinte.</span></div>
+    <div><b>Objetivo</b><span>Acumular os 56,7 milhões de XP desta fase com saldo positivo de gold, formando o caixa da fase seguinte.</span></div>
     <div><b>Critério de escolha</b><span>Criaturas de dano previsível, respawn rápido, rota circular e possibilidade de controlar o tamanho do lure.</span></div>
   </div>
 
-  <table>
-    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+  <table class="hunts">
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano</th><th>Proteção na armadura</th><th class="num">XP bruta/h</th><th>Risco</th></tr></thead>
     <tbody>
-      <tr><td><b>Grimvale</b> (superfície e caverna dos lobisomens)</td><td>werebears, wereboars, werebadgers, werewolves</td><td>físico e terra</td><td class="num">0,9 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
-      <tr><td><b>Draken Walls</b> (Zao)</td><td>draken elites, draken spellweavers, draken abominations</td><td>fogo e terra</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
-      <tr><td><b>Oramond West</b></td><td>minotauros e criaturas da região oeste</td><td>físico</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
-      <tr><td><b>Grim Reapers</b> (Drefia, Darashia)</td><td>grim reapers</td><td>morte e físico</td><td class="num">0,8 a 1,3 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Grimvale</b> (superfície e caverna dos lobisomens)</td><td>werebears, wereboars, werebadgers, werewolves</td><td>físico e terra</td><td>Snake Skin</td><td class="num">0,9 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Draken Walls</b> (Zao)</td><td>draken elites, draken spellweavers, draken abominations</td><td>fogo e terra</td><td>Dragon Hide</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Lizard City</b> (Zao)</td><td>lizard high guards, lizard legionnaires, lizard dragon priests, lizard zaoguns</td><td>físico, fogo e terra</td><td>Dragon Hide</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Asura Palace</b> (Port Hope)</td><td>dawnfire asuras, midnight asuras, frost flower asuras</td><td>fogo, morte e físico</td><td>Dragon Hide ou Lich Shroud</td><td class="num">1,2 a 1,8 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Oramond West</b></td><td>minotauros e criaturas da região oeste</td><td>físico</td><td>Snake Skin (padrão)</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Glooth Bandits</b> (Oramond)</td><td>glooth bandits, glooth brigands</td><td>físico</td><td>Snake Skin (padrão)</td><td class="num">0,9 a 1,4 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Hero Fortress</b> (Edron)</td><td>heroes, black knights, vile grandmasters</td><td>físico</td><td>Snake Skin (padrão)</td><td class="num">0,8 a 1,2 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Grim Reapers</b> (Drefia, Darashia)</td><td>grim reapers</td><td>morte e físico</td><td>Lich Shroud</td><td class="num">0,8 a 1,3 mi</td><td><span class="tag low">baixo</span></td></tr>
     </tbody>
-    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. A variação depende de skill, equipamento, ocupação do spawn e regularidade da rotação.</caption>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. A variação depende de skill, equipamento, ocupação do spawn e regularidade da rotação. Em hunts de dano quase todo físico, a proteção elemental pesa pouco; a defesa vem do amuleto e do anel.</caption>
   </table>
 
   <h3>Como executar</h3>
   <ol class="steps">
-    <li><b>Grimvale como hunt principal.</b> A combinação de dano físico previsível e loot de valor sustenta a fase. Coloque a Prey de experiência na criatura mais numerosa da rota; nos períodos de lua cheia, a superfície recebe mais criaturas e tende a render mais.</li>
-    <li><b>Draken Walls como alternativa de lucro.</b> Os drakens exigem proteção de fogo na armadura e atenção à paralisia ocasional. É uma boa hunt para treinar a tecla de pack alinhado nos corredores.</li>
-    <li><b>Grim Reapers para sessões curtas.</b> Rota simples, dano de morte constante e ótima oportunidade para praticar a cura em camadas sem picos de dano.</li>
+    <li><b>Grimvale como hunt principal.</b> Dano físico previsível e loot de valor sustentam a fase. Coloque a Prey de experiência na criatura mais numerosa; nos períodos de lua cheia, a superfície recebe mais criaturas e tende a render mais.</li>
+    <li><b>Draken Walls e Lizard City como hunts de lucro.</b> Ambas ficam em Zao e pedem proteção de fogo. Os corredores favorecem a tecla de pack alinhado (<kbd>2</kbd>); atenção à paralisia ocasional dos drakens, removida com <kbd>B</kbd>.</li>
+    <li><b>Asura Palace como preparação.</b> É a mesma mecânica de dano do Asura Mirror, que será a hunt principal no fim do intervalo. Caçar ali desde já ensina o tamanho seguro de lure contra fogo e morte.</li>
+    <li><b>Oramond, Hero Fortress e Grim Reapers para sessões curtas.</b> Rotas simples, dano estável e ótima oportunidade para praticar a cura em camadas sem picos de dano.</li>
     <li><b>Lure de três a cinco criaturas.</b> Nesta fase, o ganho de XP de lures maiores raramente compensa o consumo de Supreme Health Potion.</li>
   </ol>
+</section>
+
+<section class="chapter">
+  <h2 style="margin-top:0">Equipamento da fase 230 a 250</h2>
+  <table>
+    <thead><tr><th>Slot</th><th>Item recomendado</th><th>Imbuements</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Arma</td><td>Versão Umbral do seu tipo de arma, de uma mão</td><td>Strike, Vampirism e skill</td><td>Três slots de imbuement; prepare o material para a versão Master no nível 250.</td></tr>
+      <tr><td>Capacete</td><td>Demon Helmet ou capacete equivalente com slot de imbuement</td><td>Void</td><td>O Void sustenta a rotação; sem ele, o consumo de Strong Mana Potion sobe muito.</td></tr>
+      <tr><td>Armadura</td><td>Magic Plate Armor</td><td>Vampirism e proteção da hunt</td><td>Sem restrição de nível; base do personagem até o nível 300.</td></tr>
+      <tr><td>Pernas</td><td>Ornate Legs</td><td>não se aplica</td><td>Proteção física; boa relação entre custo e defesa.</td></tr>
+      <tr><td>Botas</td><td>Boots of Haste</td><td>Swiftness opcional</td><td>Velocidade para lure e fuga.</td></tr>
+      <tr><td>Escudo</td><td>Prismatic Shield ou Mastermind Shield</td><td>Blockade opcional</td><td>Prismatic para defesa; Mastermind como alternativa de menor custo.</td></tr>
+      <tr><td>Amuleto</td><td>Turtle Amulet no dia a dia (nível 200)</td><td>não se aplica</td><td>Stone Skin Amulet e amuleto elemental reservados para emergência e hunts específicas.</td></tr>
+      <tr><td>Anel</td><td>Prismatic Ring no dia a dia</td><td>não se aplica</td><td>Might Ring reservado para packs que fugiram do controle.</td></tr>
+    </tbody>
+  </table>
 
   <div class="callout">
-    <div class="callout-title">Proteção elemental recomendada</div>
-    <p>Grimvale: imbuement de proteção de terra na armadura. Draken Walls: proteção de fogo. Grim Reapers: proteção de morte. Mantenha um amuleto elemental de reserva para cada caso e use a tecla <kbd>Shift+3</kbd> para restaurá-lo após uma emergência.</p>
+    <div class="callout-title">Troca rápida de proteção</div>
+    <p>Mantenha duas armaduras imbuídas quando o orçamento permitir: uma com Dragon Hide (fogo), para Zao e Asura Palace, e outra com Snake Skin (terra), para Grimvale. Assim a troca de hunt não exige reimbuir, e cada imbuement dura mais tempo útil.</p>
   </div>
 
   <div class="kpi"><b>Indicador</b><span>Saldo positivo em pelo menos 70% das sessões e consumo de Supreme Health Potion abaixo de 60 unidades por hora.</span></div>
@@ -272,28 +295,50 @@
     <div><b>Critério de escolha</b><span>Spawns com packs de cinco a oito criaturas, nos quais a tecla de área cercada atinge o máximo de alvos.</span></div>
   </div>
 
-  <table>
-    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+  <table class="hunts">
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano</th><th>Proteção na armadura</th><th class="num">XP bruta/h</th><th>Risco</th></tr></thead>
     <tbody>
-      <tr><td><b>Werehyaenas</b> (Darashia)</td><td>werehyaenas, werehyaena shamans</td><td>físico, com dano mágico dos shamans</td><td class="num">1,6 a 2,4 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
-      <tr><td><b>Banuta, andares profundos</b> (Port Hope)</td><td>medusas, serpent spawns, hydras</td><td>terra e gelo, com paralisia</td><td class="num">1,5 a 2,3 mi</td><td><span class="tag mid">moderado</span></td></tr>
-      <tr><td><b>Roshamuul West</b></td><td>guzzlemaws, frazzlemaws, silencers</td><td>físico e morte</td><td class="num">1,6 a 2,5 mi</td><td><span class="tag mid">moderado</span></td></tr>
-      <tr><td><b>Montanhas de Kilmaresh</b> (Issavi)</td><td>manticores, lamassus, sphinxes</td><td>fogo, com dano mágico variado</td><td class="num">1,4 a 2,0 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Werehyaenas</b> (Darashia)</td><td>werehyaenas, werehyaena shamans</td><td>físico, com dano mágico dos shamans</td><td>Lich Shroud</td><td class="num">1,6 a 2,4 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Werelions</b> (Lion Sanctum)</td><td>werelions, werelionesses</td><td>físico e sagrado</td><td>Demon Presence</td><td class="num">1,6 a 2,4 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Banuta, andares profundos</b> (Port Hope)</td><td>medusas, serpent spawns, hydras</td><td>terra e gelo, com paralisia</td><td>Snake Skin</td><td class="num">1,5 a 2,3 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Medusa Tower</b></td><td>medusas, serpent spawns</td><td>terra, com paralisia</td><td>Snake Skin</td><td class="num">1,5 a 2,2 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Roshamuul West</b></td><td>guzzlemaws, frazzlemaws, silencers</td><td>físico e morte</td><td>Lich Shroud</td><td class="num">1,6 a 2,5 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Glooth Factory</b> (Oramond)</td><td>glooth golems, rustheap golems, metal gargoyles</td><td>físico e terra</td><td>Snake Skin</td><td class="num">1,4 a 2,0 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Montanhas de Kilmaresh</b> (Issavi)</td><td>manticores, lamassus, sphinxes</td><td>fogo, com dano mágico variado</td><td>Dragon Hide</td><td class="num">1,4 a 2,0 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Spectres de Kilmaresh</b></td><td>burster spectres, gazer spectres, ripper spectres</td><td>morte e elementos variados</td><td>Lich Shroud</td><td class="num">1,4 a 2,1 mi</td><td><span class="tag mid">moderado</span></td></tr>
     </tbody>
-    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost.</caption>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. Em Werelions, as criaturas são vulneráveis a gelo, o que favorece o charm Freeze.</caption>
   </table>
 
   <h3>Como executar</h3>
   <ol class="steps">
-    <li><b>Werehyaenas como hunt de referência.</b> O pack se forma com facilidade e a tecla <kbd>1</kbd> trabalha no limite. Mate primeiro os shamans, que concentram o dano mágico, usando a tecla <kbd>3</kbd> quando estiverem isolados.</li>
-    <li><b>Banuta exige disciplina de paralisia.</b> Mantenha <code>utani hur</code> em <kbd>H</kbd> para remover a lentidão e nunca puxe medusas e hydras juntas acima de cinco criaturas. A proteção de terra é obrigatória.</li>
-    <li><b>Roshamuul West com lure controlado.</b> Os guzzlemaws causam picos de dano físico; trate cada pack como faixa amarela até conhecer a resposta do seu personagem. A Prey de redução de dano nessa criatura é especialmente valiosa.</li>
-    <li><b>Reavalie a cada cinco níveis.</b> Compare a XP por hora das duas melhores hunts pelo Hunting Session Analyser. A hunt de maior XP só deve virar principal se o consumo de Supreme Health Potion não dobrar.</li>
+    <li><b>Werehyaenas e Werelions como hunts de referência.</b> O pack se forma com facilidade e a tecla <kbd>1</kbd> trabalha no limite. Mate primeiro os shamans e as werelionesses, que concentram o dano mais forte, usando a tecla <kbd>3</kbd> quando estiverem isolados.</li>
+    <li><b>Banuta e Medusa Tower exigem disciplina de paralisia.</b> Mantenha <code>utani hur</code> em <kbd>B</kbd> para remover a lentidão e nunca passe de cinco criaturas quando medusas estiverem no pack. A proteção de terra é obrigatória.</li>
+    <li><b>Roshamuul West com lure controlado.</b> Os guzzlemaws causam picos de dano físico; trate cada pack como faixa amarela até conhecer a resposta do personagem. A Prey de redução de dano nessa criatura é especialmente valiosa.</li>
+    <li><b>Glooth Factory, Kilmaresh e Spectres como alternativas.</b> Use-as quando as hunts principais estiverem ocupadas ou quando a criatura do dia coincidir com uma delas.</li>
+    <li><b>Reavalie a cada cinco níveis.</b> Compare a XP por hora das duas melhores hunts pelo Hunting Session Analyser. A de maior XP só vira principal se o consumo de Supreme Health Potion não dobrar.</li>
   </ol>
+</section>
+
+<section class="chapter">
+  <h2 style="margin-top:0">Equipamento da fase 250 a 275</h2>
+  <table>
+    <thead><tr><th>Slot</th><th>Item recomendado</th><th>Imbuements</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Arma</td><td>Versão Umbral Master do seu tipo de arma (nível 250) ou arma de cobra</td><td>Strike, Vampirism e skill</td><td>Principal ganho de dano da fase. A arma de cobra vem do boss Scarlett Etzel, no Cobra Bastion.</td></tr>
+      <tr><td>Capacete</td><td>Mesmo da fase anterior</td><td>Void</td><td>Priorize um tier na Forge (Momentum) antes de trocar o item.</td></tr>
+      <tr><td>Armadura</td><td>Magic Plate Armor com tier na Forge</td><td>Vampirism e proteção da hunt</td><td>O tier (Ruse) acrescenta esquiva, o que reduz picos de dano.</td></tr>
+      <tr><td>Pernas</td><td>Ornate Legs</td><td>não se aplica</td><td>Mantém até o nível 300.</td></tr>
+      <tr><td>Botas</td><td>Boots of Haste; a partir do 270, Frostflower Boots</td><td>Swiftness opcional</td><td>As Frostflower Boots são obtidas na região dos nagas, em Marapur.</td></tr>
+      <tr><td>Escudo</td><td>Prismatic Shield</td><td>Blockade opcional</td><td>Defesa estável para packs de cinco a oito criaturas.</td></tr>
+      <tr><td>Amuleto</td><td>Turtle Amulet</td><td>não se aplica</td><td>Amuleto elemental de terra para Banuta e Medusa Tower.</td></tr>
+      <tr><td>Anel</td><td>Prismatic Ring</td><td>não se aplica</td><td>Might Ring na mochila para emergência.</td></tr>
+    </tbody>
+  </table>
 
   <div class="callout slate">
     <div class="callout-title">Gestão de lucro</div>
-    <p>A partir do nível 250, é aceitável caçar com saldo próximo de zero em troca de XP, desde que uma hunt de lucro (Grimvale ou Draken Walls) seja feita a cada três ou quatro sessões para recompor o caixa de supplies e imbuements.</p>
+    <p>A partir do nível 250, é aceitável caçar com saldo próximo de zero em troca de XP, desde que uma hunt de lucro da fase anterior (Grimvale, Draken Walls ou Lizard City) seja feita a cada três ou quatro sessões para recompor o caixa de supplies e imbuements.</p>
   </div>
 
   <div class="kpi"><b>Indicador</b><span>XP bruta por hora pelo menos 40% maior do que a média da fase anterior, com tempo em vida abaixo de 50% ainda inferior a 5% da sessão.</span></div>
@@ -312,28 +357,50 @@
     <div><b>Critério de escolha</b><span>Criaturas de grande quantidade de experiência por unidade, com dano elemental que pode ser mitigado por imbuements e amuletos.</span></div>
   </div>
 
-  <table>
-    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+  <table class="hunts">
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano</th><th>Proteção na armadura</th><th class="num">XP bruta/h</th><th>Risco</th></tr></thead>
     <tbody>
-      <tr><td><b>Asura Mirror</b> (Port Hope)</td><td>true dawnfire asuras, true midnight asuras, true frost flower asuras</td><td>fogo, morte e físico</td><td class="num">2,2 a 3,2 mi</td><td><span class="tag mid">moderado</span></td></tr>
-      <tr><td><b>Cobra Bastion</b> (Ankrahmun)</td><td>cobra assassins, cobra scouts, cobra viziers</td><td>terra e físico</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
-      <tr><td><b>Dream Courts</b> (Summer Court e Winter Court)</td><td>criaturas das cortes de verão e de inverno</td><td>varia por corte: fogo e energia no verão, gelo no inverno</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
-      <tr><td><b>Asura Palace</b> (versão comum)</td><td>dawnfire asuras, midnight asuras</td><td>fogo e morte</td><td class="num">1,6 a 2,3 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Asura Mirror</b> (Port Hope)</td><td>true dawnfire asuras, true midnight asuras, true frost flower asuras</td><td>fogo, morte e físico</td><td>Dragon Hide ou Lich Shroud</td><td class="num">2,2 a 3,2 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Cobra Bastion</b> (Ankrahmun)</td><td>cobra assassins, cobra scouts, cobra viziers</td><td>terra e físico</td><td>Snake Skin</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Summer Court</b> (Dream Courts)</td><td>criaturas da corte de verão</td><td>fogo e energia</td><td>Dragon Hide</td><td class="num">2,0 a 2,8 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Winter Court</b> (Dream Courts)</td><td>criaturas da corte de inverno</td><td>gelo e físico</td><td>Quara Scale</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Roshamuul Prison</b></td><td>frazzlemaws, guzzlemaws, silencers</td><td>físico e morte</td><td>Lich Shroud</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag high">moderado a alto</span></td></tr>
+      <tr><td><b>Werelions</b> (Lion Sanctum, packs maiores)</td><td>werelions, werelionesses</td><td>físico e sagrado</td><td>Demon Presence</td><td class="num">2,0 a 2,8 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Buried Cathedral</b> (em dupla ou grupo)</td><td>criaturas dos andares inferiores</td><td>variado</td><td>conforme o andar</td><td class="num">até 6 mi por membro</td><td><span class="tag mid">moderado em grupo</span></td></tr>
+      <tr><td><b>Oramond Minos</b> (em grupo)</td><td>minotauros de Oramond</td><td>físico</td><td>Snake Skin (padrão)</td><td class="num">3 a 6 mi em grupo</td><td><span class="tag low">baixo em grupo</span></td></tr>
     </tbody>
-    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. Asura Mirror e Dream Courts exigem acessos obtidos em quests.</caption>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost; nas hunts de grupo, valores aproximados por sessão de equipe. Asura Mirror e Dream Courts exigem acessos obtidos em quests; Buried Cathedral exige a Grave Danger Quest.</caption>
   </table>
 
   <h3>Como executar</h3>
   <ol class="steps">
-    <li><b>Asura Mirror como hunt principal a partir do nível 275.</b> As versões verdadeiras dos asuras concentram muita experiência por criatura. A armadura deve alternar entre proteção de fogo e de morte conforme a parte do espelho; leve as duas armaduras imbuídas se o orçamento permitir.</li>
-    <li><b>Cobra Bastion para dias de espelho disputado.</b> O dano de terra é previsível e a proteção correspondente reduz muito o consumo de poções. O boss Scarlett Etzel fornece as armas de cobra, meta intermediária de equipamento.</li>
-    <li><b>Asura Palace como etapa de adaptação.</b> Antes do espelho, duas ou três sessões no palácio comum ajudam a calibrar o tamanho do lure contra a mesma mecânica de dano.</li>
-    <li><b>Horários.</b> Em spawns disputados, os horários de menor ocupação do servidor rendem mais do que qualquer otimização de equipamento. Registre os horários em que encontrou o spawn livre.</li>
+    <li><b>Asura Mirror como hunt principal a partir do nível 275.</b> As versões verdadeiras dos asuras concentram muita experiência por criatura. A armadura alterna entre proteção de fogo e de morte conforme a parte do espelho.</li>
+    <li><b>Cobra Bastion para dias de espelho disputado.</b> O dano de terra é previsível e a proteção correspondente reduz muito o consumo de poções; o boss Scarlett Etzel fornece as armas de cobra.</li>
+    <li><b>Dream Courts como alternativa de alta XP.</b> Escolha a corte pela proteção que você já tem imbuída: verão com fogo, inverno com gelo.</li>
+    <li><b>Roshamuul Prison só com o protocolo da Estratégia 10 em dia.</b> É a hunt de maior pico de dano da lista; entre nela apenas com Gift of Life disponível e lure reduzido.</li>
+    <li><b>Grupo nos fins de semana.</b> Buried Cathedral e Oramond Minos rendem mais em equipe; o knight atua como bloqueador (Estratégia 10).</li>
   </ol>
+</section>
+
+<section class="chapter">
+  <h2 style="margin-top:0">Equipamento da fase 275 a 300</h2>
+  <table>
+    <thead><tr><th>Slot</th><th>Item recomendado</th><th>Imbuements</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Arma</td><td>Umbral Master ou arma de cobra; no 300, arma Falcon (falcon battleaxe, falcon longsword ou falcon mace)</td><td>Strike, Vampirism e skill</td><td>As armas Falcon vêm do Falcon Bastion e exigem nível 300.</td></tr>
+      <tr><td>Capacete</td><td>Mesmo da fase anterior, com tier</td><td>Void</td><td>Troque somente se o novo item tiver o mesmo número de slots.</td></tr>
+      <tr><td>Armadura</td><td>Magic Plate Armor; no 300, Falcon Plate</td><td>Vampirism e proteção da hunt</td><td>Duas armaduras imbuídas (fogo e morte) simplificam o Asura Mirror.</td></tr>
+      <tr><td>Pernas</td><td>Ornate Legs; no 300, Falcon Greaves</td><td>não se aplica</td><td>Um tier nas pernas (Transcendence) gera janelas curtas de Avatar.</td></tr>
+      <tr><td>Botas</td><td>Frostflower Boots</td><td>Swiftness opcional</td><td>Um tier nas botas (Amplification) amplifica os outros efeitos de tier.</td></tr>
+      <tr><td>Escudo</td><td>Prismatic Shield; no 300, Falcon Escutcheon</td><td>Blockade opcional</td><td>O escudo Falcon é a meta defensiva do nível 300.</td></tr>
+      <tr><td>Amuleto</td><td>Turtle Amulet</td><td>não se aplica</td><td>Stone Skin Amulet na mochila em todas as hunts desta fase.</td></tr>
+      <tr><td>Anel</td><td>Prismatic Ring</td><td>não se aplica</td><td>Might Ring na mochila; em Roshamuul Prison, considere usá-lo nos packs grandes.</td></tr>
+    </tbody>
+  </table>
 
   <div class="callout wine">
     <div class="callout-title">Sinal de alerta</div>
-    <p>Se em Asura Mirror a exura gran ico for usada mais de uma vez por hora, ou se o Gift of Life disparar, volte ao Asura Palace por uma sessão. O espelho pune a insistência com mortes caras, e uma morte nesse nível pode apagar o equivalente a várias horas de caça.</p>
+    <p>Se no Asura Mirror ou em Roshamuul Prison a exura gran ico for usada mais de uma vez por hora, ou se o Gift of Life disparar, volte ao Asura Palace ou ao Cobra Bastion por uma sessão. Essas hunts punem a insistência com mortes caras, e uma morte nesse nível pode apagar o equivalente a várias horas de caça.</p>
   </div>
 
   <div class="kpi"><b>Indicador</b><span>Média móvel das últimas cinco sessões acima de 2,5 milhões de XP bruta por hora, sem nenhuma morte na fase.</span></div>
@@ -527,7 +594,7 @@
       <tr><td>Whirlwind Throw</td><td><code>exori hur</code></td><td class="num">15</td><td>ataque</td><td>Alvo à distância.</td></tr>
       <tr><td>Executioner's Throw</td><td><code>exori amp kor</code></td><td class="num">Wheel</td><td>ataque</td><td>Perk de revelação; ricochete entre alvos.</td></tr>
       <tr><td>Wound Cleansing</td><td><code>exura ico</code></td><td class="num">8</td><td>cura</td><td>Cura contínua até o nível 299.</td></tr>
-      <tr><td>Fair Wound Cleansing</td><td><code>exura med ico</code></td><td class="num">300</td><td>cura</td><td>Substitui exura ico na tecla Q.</td></tr>
+      <tr><td>Fair Wound Cleansing</td><td><code>exura med ico</code></td><td class="num">300</td><td>cura</td><td>Substitui exura ico no Espaço.</td></tr>
       <tr><td>Intense Wound Cleansing</td><td><code>exura gran ico</code></td><td class="num">80</td><td>cura</td><td>Emergência; cooldown longo.</td></tr>
       <tr><td>Intense Recovery</td><td><code>utura gran</code></td><td class="num">100</td><td>cura</td><td>Regeneração entre packs.</td></tr>
       <tr><td>Blood Rage</td><td><code>utito tempo</code></td><td class="num">60</td><td>suporte</td><td>Vida estável, foco em dano.</td></tr>
