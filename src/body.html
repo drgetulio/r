@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elite Knight 230 a 300</title>
+<link rel="stylesheet" href="style.css">
+<style>@page { size: A4; margin: 15mm 16mm 18mm 16mm; }</style>
+</head>
+<body>
+
+<!-- ============ APRESENTAÇÃO ============ -->
+<section class="chapter">
+  <h1>Apresentação</h1>
+  <p class="lead">Um método de progressão para o intervalo em que o Elite Knight deixa de evoluir por inércia e passa a depender de decisões técnicas.</p>
+
+  <p>Entre os níveis 230 e 300, o Elite Knight precisa acumular cerca de 243,5 milhões de pontos de experiência. Nesse trecho, a diferença entre um personagem que sobe de forma consistente e outro que estagna raramente está na hunt escolhida isoladamente. Ela costuma aparecer em quatro frentes: a organização dos atalhos, a disciplina na rotação de magias, a gestão da cura e o controle do risco de morte, que nesse patamar pode consumir várias horas de caça de uma só vez.</p>
+
+  <p>O conteúdo foi organizado em dez estratégias complementares. Cada uma traz o fundamento mecânico, os passos de implementação e um indicador objetivo para verificar o resultado no próprio cliente, com o Hunting Session Analyser e o Impact Analyser. A intenção é que um jogador experiente consiga aplicar o conjunto em uma única sessão de configuração, sem depender de ferramentas externas. Todas as recomendações usam apenas recursos nativos do cliente oficial; programas de automação violam as regras do jogo e não fazem parte deste método.</p>
+
+  <h2>Parâmetros do personagem no intervalo</h2>
+  <table>
+    <thead><tr><th>Nível</th><th class="num">Vida base</th><th class="num">Mana base</th><th class="num">Capacidade</th><th class="num">XP até o marco seguinte</th><th>Marco</th></tr></thead>
+    <tbody>
+      <tr><td>230</td><td class="num">3.515</td><td class="num">1.200</td><td class="num">6.020</td><td class="num">56,7 milhões</td><td>até o nível 250</td></tr>
+      <tr><td>250</td><td class="num">3.815</td><td class="num">1.300</td><td class="num">6.520</td><td class="num">84,9 milhões</td><td>até o nível 275</td></tr>
+      <tr><td>275</td><td class="num">4.190</td><td class="num">1.425</td><td class="num">7.145</td><td class="num">102,0 milhões</td><td>até o nível 300</td></tr>
+      <tr><td>300</td><td class="num">4.565</td><td class="num">1.550</td><td class="num">7.770</td><td class="num">&nbsp;</td><td>objetivo final</td></tr>
+    </tbody>
+    <caption>Valores calculados pelas fórmulas de vocação (15 de vida, 5 de mana e 25 de capacidade por nível), sem bônus da Wheel of Destiny ou de equipamentos. A experiência segue a fórmula oficial de nível.</caption>
+  </table>
+
+  <h2>Estimativa de tempo de jogo</h2>
+  <table>
+    <thead><tr><th>Ritmo médio de XP bruta por hora</th><th class="num">Horas de caça de 230 a 300</th><th>Perfil típico</th></tr></thead>
+    <tbody>
+      <tr><td>1,8 milhão</td><td class="num">aprox. 135 h</td><td>hunts de consolidação, sem Prey ativa</td></tr>
+      <tr><td>2,5 milhões</td><td class="num">aprox. 97 h</td><td>rota proposta neste guia, com Prey de experiência</td></tr>
+      <tr><td>3,2 milhões</td><td class="num">aprox. 76 h</td><td>rota proposta com stamina verde, boost e Forge</td></tr>
+    </tbody>
+    <caption>A experiência bruta não inclui o bônus de stamina, o XP Boost nem eventos; esses multiplicadores reduzem o tempo de forma proporcional (Estratégia 9).</caption>
+  </table>
+
+  <h2>Sumário das estratégias</h2>
+  <div class="toc">
+    <div class="toc-row"><span class="n">01</span><span class="t">Arquitetura de atalhos<span class="d">Teclado dividido por função, multi-ações e configurações do cliente.</span></span></div>
+    <div class="toc-row"><span class="n">02</span><span class="t">O ciclo de dois segundos<span class="d">Rotações de ataque, combos simultâneos e geometria de lure.</span></span></div>
+    <div class="toc-row"><span class="n">03</span><span class="t">Cura em camadas por limiar<span class="d">Regras de decisão para poções, magias de cura e emergências.</span></span></div>
+    <div class="toc-row"><span class="n">04</span><span class="t">Rota de caça, níveis 230 a 250<span class="d">Consolidação com risco baixo e lucro estável.</span></span></div>
+    <div class="toc-row"><span class="n">05</span><span class="t">Rota de caça, níveis 250 a 275<span class="d">Transição para spawns de maior densidade.</span></span></div>
+    <div class="toc-row"><span class="n">06</span><span class="t">Rota de caça, níveis 275 a 300<span class="d">Spawns de alta experiência com controle de dano elemental.</span></span></div>
+    <div class="toc-row"><span class="n">07</span><span class="t">Equipamento, imbuements e Forge<span class="d">O que comprar, em que ordem e quanto levar por sessão.</span></span></div>
+    <div class="toc-row"><span class="n">08</span><span class="t">Build passiva<span class="d">Wheel of Destiny, gemas, charms e Prey.</span></span></div>
+    <div class="toc-row"><span class="n">09</span><span class="t">Multiplicadores e calendário de XP<span class="d">Stamina, boosts, criatura do dia e treino offline.</span></span></div>
+    <div class="toc-row"><span class="n">10</span><span class="t">Protocolo de morte zero<span class="d">Checklists, rotas de fuga, PvP e alternativas em grupo.</span></span></div>
+  </div>
+</section>
+
+<!-- ============ ESTRATÉGIA 1 ============ -->
+<section class="chapter compact">
+  <div class="strategy-head">
+    <div class="strategy-num">01</div>
+    <div><div class="kicker">Estratégia</div><h1>Arquitetura de atalhos</h1></div>
+  </div>
+  <p class="lead">O teclado como painel: cada região corresponde a uma função e a mão encontra a tecla certa sem ajuda dos olhos.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Reduzir o tempo entre a percepção do perigo e a resposta, eliminando erros de tecla em momentos de pressão.</span></div>
+    <div><b>Fundamento</b><span>Agrupar ações por função (ataque, cura, suporte, equipamento) cria memória motora estável e evita que uma tecla de ataque seja pressionada quando a necessidade é curar.</span></div>
+  </div>
+
+  <h3>Mapa recomendado (movimento pelas setas, chat desligado)</h3>
+  <div class="keyboard">
+    <div class="key atk"><span class="k">1</span><span class="a">Multi-ação: área cercado</span></div>
+    <div class="key atk"><span class="k">2</span><span class="a">Multi-ação: área alinhada</span></div>
+    <div class="key atk"><span class="k">3</span><span class="a">Multi-ação: alvo único e boss</span></div>
+    <div class="key atk"><span class="k">4</span><span class="a">exori gran ico (manual)</span></div>
+    <div class="key atk"><span class="k">5</span><span class="a">exori amp kor (quando liberado)</span></div>
+    <div class="key atk"><span class="k">6</span><span class="a">exori hur (alvo à distância)</span></div>
+
+    <div class="key heal"><span class="k">Q</span><span class="a">exura ico; no 300, exura med ico</span></div>
+    <div class="key heal"><span class="k">W</span><span class="a">Ultimate Health Potion em si</span></div>
+    <div class="key heal"><span class="k">E</span><span class="a">Strong Mana Potion em si</span></div>
+    <div class="key heal"><span class="k">R</span><span class="a">Supreme Health Potion em si</span></div>
+    <div class="key heal"><span class="k">T</span><span class="a">exura gran ico (emergência)</span></div>
+    <div class="key heal"><span class="k">Y</span><span class="a">Rotworm Stew ou Hydra Tongue Salad</span></div>
+
+    <div class="key sup"><span class="k">A</span><span class="a">utito tempo</span></div>
+    <div class="key sup"><span class="k">S</span><span class="a">utamo tempo</span></div>
+    <div class="key sup"><span class="k">D</span><span class="a">exeta res</span></div>
+    <div class="key sup"><span class="k">F</span><span class="a">exeta amp res</span></div>
+    <div class="key sup"><span class="k">G</span><span class="a">utani tempo hur (fuga e reposicionamento)</span></div>
+    <div class="key sup"><span class="k">H</span><span class="a">utani hur</span></div>
+
+    <div class="key eq"><span class="k">Shift+1</span><span class="a">Equipar Stone Skin Amulet</span></div>
+    <div class="key eq"><span class="k">Shift+2</span><span class="a">Equipar Might Ring</span></div>
+    <div class="key eq"><span class="k">Shift+3</span><span class="a">Recolocar amuleto e anel de caça</span></div>
+    <div class="key eq"><span class="k">Shift+Q</span><span class="a">uteta res eq (Avatar of Steel)</span></div>
+    <div class="key eq"><span class="k">Shift+W</span><span class="a">utura gran</span></div>
+    <div class="key eq"><span class="k">Tab</span><span class="a">Selecionar próximo alvo</span></div>
+  </div>
+  <div class="legend"><i style="background:#fcf4f3;border:1px solid #c98f8f"></i>Ataque <i style="background:#f2f8f4;border:1px solid #93b9a0"></i>Cura <i style="background:#fbf7ec;border:1px solid #c4ac74"></i>Suporte <i style="background:#f2f5f8;border:1px solid #9aa7b6"></i>Equipamento e utilidades. <b>Variante WASD:</b> como Q, E, Z e C viram diagonais, mova a cura para F1 a F5 e o suporte para R, F, G, T, V e B, mantendo a mesma lógica de regiões.</div>
+
+  <h3>Configuração das multi-ações</h3>
+  <p>O cliente permite atribuir até três ações a um único botão da barra de ação (clique direito no botão e opção de atribuir multi-ação). A cada acionamento, o botão executa a primeira ação que não está em cooldown, e o ícone passa a indicar a próxima. Para o Elite Knight, isso transforma uma rotação de três magias em uma única tecla, liberando a outra mão e a atenção para a cura.</p>
+  <table>
+    <thead><tr><th>Tecla</th><th>Prioridade 1</th><th>Prioridade 2</th><th>Prioridade 3</th><th>Quando usar</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>1</kbd></td><td><code>exori gran</code></td><td><code>exori mas</code></td><td><code>exori</code></td><td>Cercado por cinco ou mais criaturas.</td></tr>
+      <tr><td><kbd>2</kbd></td><td><code>exori gran</code></td><td><code>exori min</code></td><td><code>exori</code></td><td>Pack alinhado à frente, em corredores ou após reposicionamento.</td></tr>
+      <tr><td><kbd>3</kbd></td><td><code>exori gran ico</code></td><td><code>exori gran</code></td><td><code>exori min</code></td><td>Boss, criatura isolada ou alvo prioritário.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Ajustes do cliente que fazem diferença</h3>
+  <ol class="steps">
+    <li>Configure todas as poções como <b>usar em si mesmo</b> (a mira manual custa tempo e gera erros) e mantenha a barra de ataque, com cooldowns visíveis, logo acima da janela do jogo.</li>
+    <li>Use o modo de chat desligado como padrão. Com o chat ligado, letras deixam de funcionar como atalho e uma tecla de cura pode virar texto no canal.</li>
+    <li>Abra o Hunting Session Analyser e o Impact Analyser em todas as sessões e crie, na Battle List, um filtro que mostre apenas jogadores, útil em mundos Open PvP.</li>
+  </ol>
+
+
+  <div class="kpi"><b>Indicador</b><span>Em dez minutos de caça, nenhuma tecla errada e nenhuma poção desperdiçada por mira. Se houver erros, reduza o número de atalhos ativos antes de acrescentar novos.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 2 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">02</div>
+    <div><div class="kicker">Estratégia</div><h1>O ciclo de dois segundos</h1></div>
+  </div>
+  <p class="lead">O dano do Elite Knight é determinado menos pela força de cada magia e mais pela regularidade com que alguma magia é lançada a cada janela disponível.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Não deixar nenhuma janela de ataque vazia e, ao mesmo tempo, encaixar cura e poção na mesma janela.</span></div>
+    <div><b>Fundamento</b><span>As magias de ataque compartilham um cooldown de grupo de 2 segundos; as de cura, um grupo próprio de 1 segundo; as poções, uma exaustão independente de cerca de 1 segundo. Os três relógios correm em paralelo.</span></div>
+  </div>
+
+  <h3>O combo básico</h3>
+  <p>Como os três grupos são independentes, cada janela de 2 segundos comporta uma magia de ataque, até duas magias de cura e até duas poções. Na prática, o ritmo de caça de um Elite Knight bem treinado é uma sequência curta e repetida: <kbd>1</kbd> ou <kbd>2</kbd> (ataque), <kbd>Q</kbd> (cura por magia) e <kbd>E</kbd> ou <kbd>W</kbd> (poção conforme a necessidade). Quem pressiona apenas o ataque e cura somente quando a vida cai está desperdiçando metade da capacidade de sustentação do personagem.</p>
+
+  <h3>Rotação para criaturas ao redor (tecla 1)</h3>
+  <div class="timeline">
+    <div class="hot"><b>0 s</b><span>exori gran</span></div>
+    <div><b>2 s</b><span>exori mas</span></div>
+    <div><b>4 s</b><span>exori</span></div>
+    <div class="hot"><b>6 s</b><span>exori gran</span></div>
+    <div><b>8 s</b><span>exori</span></div>
+    <div><b>10 s</b><span>exori mas</span></div>
+    <div class="hot"><b>12 s</b><span>exori gran</span></div>
+  </div>
+  <p class="small">Sequência resultante da prioridade da multi-ação com cooldowns de referência de 6 s (exori gran), 8 s (exori mas) e 4 s (exori). Nenhuma janela fica vazia.</p>
+
+  <h3>Rotação para pack alinhado (tecla 2)</h3>
+  <div class="timeline">
+    <div class="hot"><b>0 s</b><span>exori gran</span></div>
+    <div><b>2 s</b><span>exori min</span></div>
+    <div><b>4 s</b><span>exori</span></div>
+    <div class="hot"><b>6 s</b><span>exori gran</span></div>
+    <div><b>8 s</b><span>exori min</span></div>
+    <div><b>10 s</b><span>exori</span></div>
+    <div class="hot"><b>12 s</b><span>exori gran</span></div>
+  </div>
+  <p class="small">Com exori min a 6 s, o ciclo se fecha em três magias e exori mas deixa de ser necessário. Use esta tecla quando conseguir posicionar o pack à sua frente.</p>
+
+  <h3>Geometria do lure</h3>
+  <ol class="steps">
+    <li><b>Puxe em funil.</b> Ande por corredores e cantos para que as criaturas cheguem em fila. Ao parar, dê um passo diagonal: o pack se reorganiza à frente e exori min atinge a maior parte dele.</li>
+    <li><b>Abra com exeta amp res</b> quando houver criaturas à distância ou mirando outro jogador do grupo. Na caça solo, ele concentra o pack em você antes do primeiro exori gran.</li>
+    <li><b>Mantenha o contato.</b> Exori e exori gran atingem as casas adjacentes. Um passo para trás no momento errado tira metade do pack da área e reduz o dano da janela.</li>
+    <li><b>Feche com exori gran ico</b> na criatura mais resistente quando restarem duas ou três, para não estender o tempo de pack com poucas criaturas, que é o momento de menor XP por segundo.</li>
+  </ol>
+
+  <h3>Uso de utito tempo e utamo tempo</h3>
+  <p>Blood Rage (<code>utito tempo</code>) aumenta o dano corpo a corpo em troca de defesa; Protector (<code>utamo tempo</code>) faz o oposto. Não há benefício em alternar os dois dentro do mesmo pack. A regra prática é simples: com vida estável acima de 70% durante um ciclo completo de rotação, mantenha Blood Rage; se a vida cair abaixo desse patamar em dois ciclos seguidos, troque para Protector e reduza o tamanho do próximo lure. Vale lembrar que exori mas transfere menos life leech e mana leech do que as demais magias de área; por isso ele só aparece como segunda prioridade na tecla de área cercada, em que o número de alvos compensa essa perda.</p>
+
+
+  <div class="kpi"><b>Indicador</b><span>No Hunting Session Analyser, o dano por hora deve subir pelo menos 10% em relação à sessão anterior na mesma hunt, sem aumento no consumo de Supreme Health Potion.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 3 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">03</div>
+    <div><div class="kicker">Estratégia</div><h1>Cura em camadas por limiar</h1></div>
+  </div>
+  <p class="lead">A cura deixa de ser reação e passa a ser um protocolo de decisão com faixas de vida previamente definidas.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Saber, antes de entrar na hunt, qual tecla pressionar em cada faixa de vida e mana.</span></div>
+    <div><b>Fundamento</b><span>Poções de vida e de mana compartilham a mesma exaustão. A cada segundo, é preciso escolher entre recuperar vida ou mana pela poção; a magia de cura cobre a outra necessidade.</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Faixa de vida</th><th>Exemplo no nível 250</th><th>Magia de cura (Q, T)</th><th>Poção (W, E, R)</th><th>Conduta</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag low">acima de 85%</span></td><td>mais de 3.240</td><td>exura ico se houver dano contínuo</td><td>Strong Mana Potion se a mana estiver abaixo de 80%</td><td>Rotação completa, Blood Rage ativo.</td></tr>
+      <tr><td><span class="tag low">70% a 85%</span></td><td>2.670 a 3.240</td><td>exura ico a cada segundo</td><td>Strong Mana Potion</td><td>Mantenha o lure.</td></tr>
+      <tr><td><span class="tag mid">50% a 70%</span></td><td>1.910 a 2.670</td><td>exura ico a cada segundo</td><td>Ultimate Health Potion</td><td>Não puxe novas criaturas; troque para Protector.</td></tr>
+      <tr><td><span class="tag high">35% a 50%</span></td><td>1.335 a 1.910</td><td>exura gran ico, se disponível</td><td>Supreme Health Potion</td><td>Equipe Stone Skin Amulet; recue para um canto.</td></tr>
+      <tr><td><span class="tag high">abaixo de 35%</span></td><td>menos de 1.335</td><td>exura ico contínuo</td><td>Supreme Health Potion contínua</td><td>Avatar of Steel, se liberado; utani tempo hur e rota de fuga.</td></tr>
+    </tbody>
+    <caption>Os valores em pontos de vida usam a vida base do nível 250 (3.815). Ajuste a tabela à vida real do personagem, que será maior com a Wheel of Destiny.</caption>
+  </table>
+
+  <h3>Regras complementares</h3>
+  <ol class="steps">
+    <li><b>Piso de mana de 35%.</b> Abaixo disso, o personagem perde ao mesmo tempo a rotação de ataque e a cura por magia. Se a mana chegar a esse ponto com a vida acima de 70%, use duas Strong Mana Potion seguidas antes de voltar à rotação.</li>
+    <li><b>Exura gran ico é reserva, não rotina.</b> Com cooldown de cerca de 10 minutos, deve ser usada apenas na faixa vermelha. Se foi usada mais de uma vez em uma hora, o lure está acima da capacidade do personagem.</li>
+    <li><b>No nível 300, troque exura ico por exura med ico (Fair Wound Cleansing)</b> na tecla <kbd>Q</kbd>. A cura por segundo aumenta sem alterar a memória motora construída até ali.</li>
+    <li><b>Gift of Life é o último seguro.</b> Quando liberado na Wheel, ele impede uma morte por dano letal, com longo tempo de recarga. Se ele disparou, encerre o pack, reponha a vida e reavalie o lure antes de continuar.</li>
+    <li><b>Ultimate ou Supreme.</b> A Supreme Health Potion cura entre 875 e 1.125 pontos por uso, o que corresponde a algo como 25% da vida no intervalo. Como a exaustão é a mesma, ela entrega mais cura por segundo; a Ultimate Health Potion é a escolha econômica para a faixa amarela.</li>
+  </ol>
+
+  <div class="callout wine">
+    <div class="callout-title">Erro mais comum</div>
+    <p>Usar poção de vida com a vida acima de 80% enquanto a mana cai. O resultado é um personagem com vida cheia e sem mana para a rotação, que logo depois fica sem recursos para curar. A poção acompanha a necessidade mais urgente; a magia de cura acompanha a outra.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>No Impact Analyser, o tempo em vida abaixo de 50% deve ficar abaixo de 5% da sessão. Acima disso, reduza o lure em uma ou duas criaturas.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 4 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">04</div>
+    <div><div class="kicker">Estratégia</div><h1>Rota de caça, níveis 230 a 250</h1></div>
+  </div>
+  <p class="lead">Fase de consolidação: o foco é transformar a configuração das três primeiras estratégias em hábito, com risco baixo e lucro suficiente para financiar a Forge e os imbuements.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Acumular os 56,7 milhões de XP desta fase com saldo positivo de gold, preparando o capital para a fase seguinte.</span></div>
+    <div><b>Critério de escolha</b><span>Criaturas de dano previsível, respawn rápido, rota circular e possibilidade de controlar o tamanho do lure.</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+    <tbody>
+      <tr><td><b>Grimvale</b> (superfície e caverna dos lobisomens)</td><td>werebears, wereboars, werebadgers, werewolves</td><td>físico e terra</td><td class="num">0,9 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Draken Walls</b> (Zao)</td><td>draken elites, draken spellweavers, draken abominations</td><td>fogo e terra</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Oramond West</b></td><td>minotauros e criaturas da região oeste</td><td>físico</td><td class="num">1,0 a 1,5 mi</td><td><span class="tag low">baixo</span></td></tr>
+      <tr><td><b>Grim Reapers</b> (Drefia, Darashia)</td><td>grim reapers</td><td>morte e físico</td><td class="num">0,8 a 1,3 mi</td><td><span class="tag low">baixo</span></td></tr>
+    </tbody>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. A variação depende de skill, equipamento, ocupação do spawn e regularidade da rotação.</caption>
+  </table>
+
+  <h3>Como executar</h3>
+  <ol class="steps">
+    <li><b>Grimvale como hunt principal.</b> A combinação de dano físico previsível e loot de valor sustenta a fase. Coloque a Prey de experiência na criatura mais numerosa da rota; nos períodos de lua cheia, a superfície recebe mais criaturas e tende a render mais.</li>
+    <li><b>Draken Walls como alternativa de lucro.</b> Os drakens exigem proteção de fogo na armadura e atenção à paralisia ocasional. É uma boa hunt para treinar a tecla de pack alinhado nos corredores.</li>
+    <li><b>Grim Reapers para sessões curtas.</b> Rota simples, dano de morte constante e ótima oportunidade para praticar a cura em camadas sem picos de dano.</li>
+    <li><b>Lure de três a cinco criaturas.</b> Nesta fase, o ganho de XP de lures maiores raramente compensa o consumo de Supreme Health Potion.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">Proteção elemental recomendada</div>
+    <p>Grimvale: imbuement de proteção de terra na armadura. Draken Walls: proteção de fogo. Grim Reapers: proteção de morte. Mantenha um amuleto elemental de reserva para cada caso e use a tecla <kbd>Shift+3</kbd> para restaurá-lo após uma emergência.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>Saldo positivo em pelo menos 70% das sessões e consumo de Supreme Health Potion abaixo de 60 unidades por hora.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 5 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">05</div>
+    <div><div class="kicker">Estratégia</div><h1>Rota de caça, níveis 250 a 275</h1></div>
+  </div>
+  <p class="lead">Fase de transição: o personagem já sustenta lures maiores e passa a priorizar densidade de criaturas por tela.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Elevar a XP bruta para a faixa de 1,6 a 2,5 milhões por hora, aceitando lucro próximo de zero quando necessário.</span></div>
+    <div><b>Critério de escolha</b><span>Spawns com packs de cinco a oito criaturas, nos quais a tecla de área cercada atinge o máximo de alvos.</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+    <tbody>
+      <tr><td><b>Werehyaenas</b> (Darashia)</td><td>werehyaenas, werehyaena shamans</td><td>físico, com dano mágico dos shamans</td><td class="num">1,6 a 2,4 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+      <tr><td><b>Banuta, andares profundos</b> (Port Hope)</td><td>medusas, serpent spawns, hydras</td><td>terra e gelo, com paralisia</td><td class="num">1,5 a 2,3 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Roshamuul West</b></td><td>guzzlemaws, frazzlemaws, silencers</td><td>físico e morte</td><td class="num">1,6 a 2,5 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Montanhas de Kilmaresh</b> (Issavi)</td><td>manticores, lamassus, sphinxes</td><td>fogo, com dano mágico variado</td><td class="num">1,4 a 2,0 mi</td><td><span class="tag low">baixo a moderado</span></td></tr>
+    </tbody>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost.</caption>
+  </table>
+
+  <h3>Como executar</h3>
+  <ol class="steps">
+    <li><b>Werehyaenas como hunt de referência.</b> O pack se forma com facilidade e a tecla <kbd>1</kbd> trabalha no limite. Mate primeiro os shamans, que concentram o dano mágico, usando a tecla <kbd>3</kbd> quando estiverem isolados.</li>
+    <li><b>Banuta exige disciplina de paralisia.</b> Mantenha <code>utani hur</code> em <kbd>H</kbd> para remover a lentidão e nunca puxe medusas e hydras juntas acima de cinco criaturas. A proteção de terra é obrigatória.</li>
+    <li><b>Roshamuul West com lure controlado.</b> Os guzzlemaws causam picos de dano físico; trate cada pack como faixa amarela até conhecer a resposta do seu personagem. A Prey de redução de dano nessa criatura é especialmente valiosa.</li>
+    <li><b>Reavalie a cada cinco níveis.</b> Compare a XP por hora das duas melhores hunts pelo Hunting Session Analyser. A hunt de maior XP só deve virar principal se o consumo de Supreme Health Potion não dobrar.</li>
+  </ol>
+
+  <div class="callout slate">
+    <div class="callout-title">Gestão de lucro</div>
+    <p>A partir do nível 250, é aceitável caçar com saldo próximo de zero em troca de XP, desde que uma hunt de lucro (Grimvale ou Draken Walls) seja feita a cada três ou quatro sessões para recompor o caixa de supplies e imbuements.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>XP bruta por hora pelo menos 40% maior do que a média da fase anterior, com tempo em vida abaixo de 50% ainda inferior a 5% da sessão.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 6 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">06</div>
+    <div><div class="kicker">Estratégia</div><h1>Rota de caça, níveis 275 a 300</h1></div>
+  </div>
+  <p class="lead">Fase de aceleração: spawns de alta experiência, em que o controle do dano elemental passa a ser tão importante quanto o tamanho do lure.</p>
+
+  <div class="objective">
+    <div><b>Objetivo</b><span>Concluir os últimos 102 milhões de XP com a média mais alta do intervalo, entre 2,2 e 3,2 milhões de XP bruta por hora.</span></div>
+    <div><b>Critério de escolha</b><span>Criaturas de grande quantidade de experiência por unidade, com dano elemental que pode ser mitigado por imbuements e amuletos.</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Hunt</th><th>Criaturas principais</th><th>Dano predominante</th><th>XP bruta por hora</th><th>Risco</th></tr></thead>
+    <tbody>
+      <tr><td><b>Asura Mirror</b> (Port Hope)</td><td>true dawnfire asuras, true midnight asuras, true frost flower asuras</td><td>fogo, morte e físico</td><td class="num">2,2 a 3,2 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Cobra Bastion</b> (Ankrahmun)</td><td>cobra assassins, cobra scouts, cobra viziers</td><td>terra e físico</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Dream Courts</b> (Summer Court e Winter Court)</td><td>criaturas das cortes de verão e de inverno</td><td>varia por corte: fogo e energia no verão, gelo no inverno</td><td class="num">2,0 a 3,0 mi</td><td><span class="tag mid">moderado</span></td></tr>
+      <tr><td><b>Asura Palace</b> (versão comum)</td><td>dawnfire asuras, midnight asuras</td><td>fogo e morte</td><td class="num">1,6 a 2,3 mi</td><td><span class="tag low">baixo</span></td></tr>
+    </tbody>
+    <caption>Faixas conservadoras para caça solo, sem stamina verde nem XP Boost. Asura Mirror e Dream Courts exigem acessos obtidos em quests.</caption>
+  </table>
+
+  <h3>Como executar</h3>
+  <ol class="steps">
+    <li><b>Asura Mirror como hunt principal a partir do nível 275.</b> As versões verdadeiras dos asuras concentram muita experiência por criatura. A armadura deve alternar entre proteção de fogo e de morte conforme a parte do espelho; leve as duas armaduras imbuídas se o orçamento permitir.</li>
+    <li><b>Cobra Bastion para dias de espelho disputado.</b> O dano de terra é previsível e a proteção correspondente reduz muito o consumo de poções. O boss Scarlett Etzel fornece as armas de cobra, meta intermediária de equipamento.</li>
+    <li><b>Asura Palace como etapa de adaptação.</b> Antes do espelho, duas ou três sessões no palácio comum ajudam a calibrar o tamanho do lure contra a mesma mecânica de dano.</li>
+    <li><b>Horários.</b> Em spawns disputados, os horários de menor ocupação do servidor rendem mais do que qualquer otimização de equipamento. Registre os horários em que encontrou o spawn livre.</li>
+  </ol>
+
+  <div class="callout wine">
+    <div class="callout-title">Sinal de alerta</div>
+    <p>Se em Asura Mirror a exura gran ico for usada mais de uma vez por hora, ou se o Gift of Life disparar, volte ao Asura Palace por uma sessão. O espelho pune a insistência com mortes caras, e uma morte nesse nível pode apagar o equivalente a várias horas de caça.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>Média móvel das últimas cinco sessões acima de 2,5 milhões de XP bruta por hora, sem nenhuma morte na fase.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 7 ============ -->
+<section class="chapter compact">
+  <div class="strategy-head">
+    <div class="strategy-num">07</div>
+    <div><div class="kicker">Estratégia</div><h1>Equipamento, imbuements e Forge</h1></div>
+  </div>
+  <p class="lead">Primeiro o que evita a morte, depois o que aumenta o dano sustentado, por último o conforto.</p>
+
+  <h3>Ordem de compra</h3>
+  <ol class="steps">
+    <li><b>Bênçãos completas</b>, renovadas imediatamente após qualquer morte. Sem elas, o custo de uma morte inviabiliza o resto do planejamento.</li>
+    <li><b>Imbuements de arma</b>: Powerful Strike (crítico), Powerful Vampirism (life leech) e o imbuement de skill correspondente ao tipo da arma (Chop, Slash ou Bash).</li>
+    <li><b>Imbuements de capacete e armadura</b>: Powerful Void (mana leech) no capacete; na armadura, Powerful Vampirism e a proteção elemental da hunt principal.</li>
+    <li><b>Supplies da sessão</b> (tabela abaixo), comprados em quantidade para pelo menos três sessões.</li>
+    <li><b>Tiers na Exaltation Forge</b> (arma, armadura e capacete, nessa ordem) e, depois, exercise weapons para o treino (Estratégia 9).</li>
+  </ol>
+
+  <table>
+    <thead><tr><th>Slot</th><th>Imbuements</th><th>Efeito de tier na Forge</th><th>Prioridade</th></tr></thead>
+    <tbody>
+      <tr><td>Arma</td><td>Powerful Strike, Powerful Vampirism, skill da arma</td><td>Onslaught: chance de golpe com dano adicional</td><td><span class="tag high">máxima</span></td></tr>
+      <tr><td>Armadura</td><td>Powerful Vampirism, proteção elemental da hunt</td><td>Ruse: chance de esquivar de um ataque</td><td><span class="tag high">máxima</span></td></tr>
+      <tr><td>Capacete</td><td>Powerful Void; segundo slot conforme o item</td><td>Momentum: chance de reduzir cooldowns</td><td><span class="tag mid">alta</span></td></tr>
+      <tr><td>Pernas</td><td>sem imbuement relevante</td><td>Transcendence: chance de ativar um Avatar breve</td><td><span class="tag mid">média</span></td></tr>
+      <tr><td>Botas</td><td>Swiftness (velocidade)</td><td>Amplification: amplifica os demais efeitos</td><td><span class="tag low">média</span></td></tr>
+      <tr><td>Escudo</td><td>Blockade (shielding)</td><td>sem efeito de tier ofensivo</td><td><span class="tag low">baixa</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Lista de compras por sessão de duas horas</h3>
+  <table>
+    <thead><tr><th>Item</th><th class="num">Quantidade</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Strong Mana Potion</td><td class="num">1.400 a 2.000</td><td>Principal fonte de mana; valor de NPC próximo de 93 gp.</td></tr>
+      <tr><td>Ultimate Health Potion</td><td class="num">300 a 500</td><td>Cura econômica para a faixa amarela.</td></tr>
+      <tr><td>Supreme Health Potion</td><td class="num">100 a 200</td><td>Reserva da faixa vermelha; se terminar, o lure estava grande demais.</td></tr>
+      <tr><td>Stone Skin Amulet</td><td class="num">2 a 3</td><td>Só para emergência; o uso contínuo encarece a sessão sem necessidade.</td></tr>
+      <tr><td>Might Ring</td><td class="num">1 a 2</td><td>Proteção geral para packs que fugiram do controle.</td></tr>
+      <tr><td>Amuleto elemental da hunt</td><td class="num">1 a 2</td><td>Escolhido pelo dano predominante das tabelas das Estratégias 4 a 6.</td></tr>
+      <tr><td>Rotworm Stew e Hydra Tongue Salad</td><td class="num">2 a 4</td><td>Vida cheia e remoção de condições.</td></tr>
+    </tbody>
+    <caption>Referência para os níveis 250 a 275; reduza cerca de 20% na fase anterior e acrescente 20% na seguinte.</caption>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Economia com gold tokens</div>
+    <p>Imbuements Powerful podem ser aplicados com gold tokens em vez de materiais; compre os tokens no Market quando custarem menos que os materiais. Metas de equipamento: armas de cobra (Scarlett Etzel) no meio do intervalo e equipamentos Falcon (Falcon Bastion) no nível 300.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>Nenhuma sessão iniciada com imbuement abaixo de duas horas restantes e nenhuma sessão interrompida por falta de supplies.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 8 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">08</div>
+    <div><div class="kicker">Estratégia</div><h1>Build passiva</h1></div>
+  </div>
+  <p class="lead">Wheel of Destiny, gemas, charms e Prey formam a parte da força do personagem que não depende da execução. Configurados uma vez, trabalham em todas as sessões.</p>
+
+  <h3>Wheel of Destiny</h3>
+  <p>O personagem recebe pontos da Wheel a partir do nível 51, o que significa aproximadamente 180 pontos no nível 230 e 250 no nível 300, além dos pontos extras de pergaminhos e tarefas. Os perks de revelação de cada domínio dependem da concentração de pontos e de gemas nesse domínio, com o primeiro estágio a partir de 250 de maestria de revelação.</p>
+  <ol class="steps">
+    <li><b>Primeiro, sobrevivência.</b> Concentre pontos no domínio que concede Gift of Life. Para quem busca baixo risco, nenhum outro perk oferece proteção comparável.</li>
+    <li><b>Em seguida, o domínio de Avatar of Steel ou de Executioner's Throw.</b> Avatar of Steel oferece uma janela de proteção e dano no pior momento de um pack; Executioner's Throw acrescenta uma magia de dano com ricochete, útil para packs em fila. Para o perfil deste guia, Avatar of Steel tem prioridade.</li>
+    <li><b>Perks de dedicação.</b> Distribua as fatias de vida e mana de forma a manter a mana total suficiente para pelo menos quatro magias de ataque seguidas sem poção.</li>
+    <li><b>Gemas no Gem Atelier.</b> Use as gemas obtidas em bosses e hunts para alcançar mais cedo o primeiro estágio de revelação. Prefira modificadores de proteção ao elemento dominante da hunt principal.</li>
+  </ol>
+
+  <h3>Charms</h3>
+  <table>
+    <thead><tr><th>Charm</th><th>Função</th><th>Onde aplicar</th></tr></thead>
+    <tbody>
+      <tr><td>Low Blow</td><td>Aumenta a chance de acerto crítico</td><td>Criatura mais numerosa da hunt principal.</td></tr>
+      <tr><td>Charm de dano elemental</td><td>Dano extra do elemento a que a criatura é vulnerável</td><td>Criaturas com fraqueza elemental clara.</td></tr>
+      <tr><td>Vampiric Embrace e Void's Call</td><td>Life leech e mana leech garantidos contra a criatura escolhida</td><td>Criatura principal, para reduzir o consumo de poções.</td></tr>
+      <tr><td>Parry ou Dodge</td><td>Reflexão ou esquiva de dano</td><td>Criatura de maior dano da rota (guzzlemaws, asuras).</td></tr>
+    </tbody>
+    <caption>O sistema atual divide os charms em maiores e menores, cada um com três estágios de ativação. Confira no menu do Bestiary quais estão disponíveis para o personagem.</caption>
+  </table>
+
+  <h3>Prey</h3>
+  <ol class="steps">
+    <li><b>Primeiro slot:</b> bônus de experiência na criatura principal da hunt da fase.</li>
+    <li><b>Segundo slot:</b> redução de dano na criatura que mais causa dano (consulte o Impact Analyser para identificar qual é).</li>
+    <li><b>Terceiro slot:</b> bônus de dano ou de loot, conforme a sessão seja de XP ou de lucro.</li>
+    <li>Use Prey Wildcards para elevar as estrelas do bônus de experiência; é o investimento de retorno mais rápido desta estratégia.</li>
+  </ol>
+
+  <div class="kpi"><b>Indicador</b><span>Gift of Life liberado até o nível 260 e Prey de experiência ativa em 100% das sessões de XP.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 9 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">09</div>
+    <div><div class="kicker">Estratégia</div><h1>Multiplicadores e calendário de XP</h1></div>
+  </div>
+  <p class="lead">A mesma hora de caça pode valer o dobro, dependendo de quando ela acontece.</p>
+
+  <table>
+    <thead><tr><th>Multiplicador</th><th>Como funciona</th><th>Como aproveitar</th></tr></thead>
+    <tbody>
+      <tr><td>Stamina verde</td><td>Com conta premium, as duas últimas horas de stamina (de 40 a 42 horas) concedem 50% de experiência adicional.</td><td>Faça a sessão principal do dia exatamente nessas duas horas e deixe a stamina regenerar offline.</td></tr>
+      <tr><td>XP Boost</td><td>Item da Store que concede 50% de experiência adicional por uma hora.</td><td>Ative junto com a stamina verde e a Prey de XP, na hunt de maior XP da fase.</td></tr>
+      <tr><td>Criatura do dia</td><td>A criatura em destaque concede experiência e loot aumentados e respawn mais rápido.</td><td>Consulte diariamente; se for uma criatura das rotas deste guia, priorize essa hunt.</td></tr>
+      <tr><td>Eventos sazonais</td><td>Eventos de experiência dobrada e de respawn acelerado anunciados pela CipSoft.</td><td>Estoque supplies e gold tokens com antecedência e concentre horas de jogo nesses dias.</td></tr>
+      <tr><td>Recompensa diária</td><td>Sequência de recompensas que inclui Prey Wildcards e minutos de XP Boost.</td><td>Mantenha a sequência sem interrupção, mesmo em dias sem caça.</td></tr>
+    </tbody>
+    <caption>Evite caçar com stamina laranja (14 horas ou menos), que reduz a experiência obtida.</caption>
+  </table>
+
+  <h3>Treino offline</h3>
+  <p>O tempo fora da caça deve trabalhar a favor do personagem. Como a stamina só se regenera com o personagem desconectado, o padrão é encerrar o dia no treino offline das estátuas de treino, que acumula skill durante a ausência sem interromper essa regeneração. As exercise weapons do tipo da arma principal ficam para os períodos em que o jogador permanece conectado sem caçar (organizando o depot, negociando no Market); em casa, um exercise dummy aumenta o rendimento desse treino. O ganho de skill eleva o dano de todas as magias de ataque do Elite Knight, que dependem do skill da arma.</p>
+
+  <h3>Semana modelo</h3>
+  <table>
+    <thead><tr><th>Dia</th><th>Sessão principal (stamina verde)</th><th>Sessão secundária</th><th>Fora do jogo</th></tr></thead>
+    <tbody>
+      <tr><td>Segunda a quinta</td><td>Hunt de XP da fase, com Prey de XP</td><td>Opcional, até 1 hora, em hunt de lucro</td><td>Treino offline</td></tr>
+      <tr><td>Sexta</td><td>Hunt de lucro para recompor o caixa</td><td>Compra de supplies e renovação de imbuements</td><td>Exercise weapons durante as compras; depois, treino offline</td></tr>
+      <tr><td>Sábado</td><td>Hunt de XP com XP Boost</td><td>Boss semanal ou tarefas de Bosstiary</td><td>Treino offline</td></tr>
+      <tr><td>Domingo</td><td>Hunt de XP ou caça em grupo</td><td>Revisão das métricas da semana</td><td>Treino offline</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kpi"><b>Indicador</b><span>Pelo menos 80% das horas de caça da semana feitas com stamina verde ou com XP Boost ativo.</span></div>
+</section>
+
+<!-- ============ ESTRATÉGIA 10 ============ -->
+<section class="chapter">
+  <div class="strategy-head">
+    <div class="strategy-num">10</div>
+    <div><div class="kicker">Estratégia</div><h1>Protocolo de morte zero</h1></div>
+  </div>
+  <p class="lead">No intervalo de 230 a 300, a variável que mais afeta o tempo total não é a XP por hora, e sim o número de mortes.</p>
+
+  <h3>Checklist antes de cada sessão</h3>
+  <div class="two-col">
+    <ol class="steps">
+      <li>Bênçãos completas ativas.</li>
+      <li>Imbuements com pelo menos duas horas restantes.</li>
+      <li>Supplies conferidos com a tabela da Estratégia 7.</li>
+      <li>Stone Skin Amulet e Might Ring na mochila, nos atalhos <kbd>Shift+1</kbd> e <kbd>Shift+2</kbd>.</li>
+      <li>Armadura com a proteção elemental da hunt.</li>
+      <li>Prey ativa e criatura do dia consultada.</li>
+      <li>Gift of Life e exura gran ico disponíveis.</li>
+      <li>Rota de fuga conhecida: escadas, buracos e portas.</li>
+      <li>Analisadores abertos e zerados.</li>
+      <li>Ping estável; com instabilidade, lure reduzido pela metade.</li>
+    </ol>
+  </div>
+
+  <h3>Regras durante a caça</h3>
+  <ol class="steps">
+    <li><b>Regra do primeiro ciclo.</b> Depois da primeira rotação completa (cerca de 6 segundos), observe a vida. Se ela estiver abaixo de 60%, o pack está acima do limite e o próximo deve ter uma ou duas criaturas a menos.</li>
+    <li><b>Nunca puxe durante a faixa amarela.</b> Novas criaturas só entram no lure com a vida acima de 70% e a mana acima de 50%.</li>
+    <li><b>Fuga planejada.</b> Ao entrar na faixa vermelha, a sequência é: Supreme Health Potion, Stone Skin Amulet, Avatar of Steel se disponível e utani tempo hur em direção à saída conhecida. A fuga começa antes da emergência, não depois.</li>
+    <li><b>Em mundos Open PvP</b>, mantenha os inimigos conhecidos na lista VIP e observe a Battle List filtrada por jogadores. A presença de um grupo desconhecido em spawn disputado é motivo suficiente para trocar de hunt.</li>
+  </ol>
+
+  <h3>Alternativas em grupo</h3>
+  <p>A experiência compartilhada exige que o nível do membro mais baixo seja de pelo menos dois terços do nível do mais alto, e o bônus cresce com o número de vocações diferentes no grupo. Para o Elite Knight, isso abre spawns de grupo de alta experiência no próprio intervalo, como a Buried Cathedral e os minotauros de Oramond. Nessa função, o knight bloqueia a passagem, mantém a atenção das criaturas com <code>exeta res</code> e <code>exeta amp res</code> e usa <code>utamo tempo</code> em packs grandes, deixando o dano principal para as vocações de longo alcance.</p>
+
+  <div class="callout wine">
+    <div class="callout-title">Análise pós-morte</div>
+    <p>Se uma morte acontecer, abra o Impact Analyser e responda a três perguntas antes de voltar à hunt: qual elemento causou o dano, quantas criaturas estavam no pack e em que faixa de vida a fuga começou. Quase sempre a resposta aponta para uma das regras acima que foi quebrada.</p>
+  </div>
+
+  <div class="kpi"><b>Indicador</b><span>Zero mortes entre os níveis 230 e 300. Uma morte é aceitável como aprendizado; duas na mesma hunt indicam que ela deve ser adiada por cinco níveis.</span></div>
+</section>
+
+<!-- ============ REFERÊNCIA RÁPIDA ============ -->
+<section class="chapter">
+  <h1>Referência rápida de magias</h1>
+  <p class="lead">Magias do Elite Knight relevantes para o intervalo de 230 a 300.</p>
+  <table>
+    <thead><tr><th>Magia</th><th>Palavras</th><th class="num">Nível</th><th>Grupo</th><th>Uso neste guia</th></tr></thead>
+    <tbody>
+      <tr><td>Fierce Berserk</td><td><code>exori gran</code></td><td class="num">90</td><td>ataque</td><td>Prioridade 1 nas teclas de área.</td></tr>
+      <tr><td>Berserk</td><td><code>exori</code></td><td class="num">35</td><td>ataque</td><td>Preenchimento das janelas livres.</td></tr>
+      <tr><td>Front Sweep</td><td><code>exori min</code></td><td class="num">70</td><td>ataque</td><td>Pack alinhado à frente.</td></tr>
+      <tr><td>Groundshaker</td><td><code>exori mas</code></td><td class="num">33</td><td>ataque</td><td>Cercado por muitas criaturas.</td></tr>
+      <tr><td>Annihilation</td><td><code>exori gran ico</code></td><td class="num">110</td><td>ataque</td><td>Alvo único; cooldown de 30 s.</td></tr>
+      <tr><td>Brutal Strike</td><td><code>exori ico</code></td><td class="num">16</td><td>ataque</td><td>Alvo único em situações pontuais.</td></tr>
+      <tr><td>Whirlwind Throw</td><td><code>exori hur</code></td><td class="num">15</td><td>ataque</td><td>Alvo à distância.</td></tr>
+      <tr><td>Executioner's Throw</td><td><code>exori amp kor</code></td><td class="num">Wheel</td><td>ataque</td><td>Perk de revelação; ricochete entre alvos.</td></tr>
+      <tr><td>Wound Cleansing</td><td><code>exura ico</code></td><td class="num">8</td><td>cura</td><td>Cura contínua até o nível 299.</td></tr>
+      <tr><td>Fair Wound Cleansing</td><td><code>exura med ico</code></td><td class="num">300</td><td>cura</td><td>Substitui exura ico na tecla Q.</td></tr>
+      <tr><td>Intense Wound Cleansing</td><td><code>exura gran ico</code></td><td class="num">80</td><td>cura</td><td>Emergência; cooldown longo.</td></tr>
+      <tr><td>Intense Recovery</td><td><code>utura gran</code></td><td class="num">100</td><td>cura</td><td>Regeneração entre packs.</td></tr>
+      <tr><td>Blood Rage</td><td><code>utito tempo</code></td><td class="num">60</td><td>suporte</td><td>Vida estável, foco em dano.</td></tr>
+      <tr><td>Protector</td><td><code>utamo tempo</code></td><td class="num">55</td><td>suporte</td><td>Packs grandes ou faixa amarela.</td></tr>
+      <tr><td>Challenge</td><td><code>exeta res</code></td><td class="num">20</td><td>suporte</td><td>Atrair criaturas próximas.</td></tr>
+      <tr><td>Chivalrous Challenge</td><td><code>exeta amp res</code></td><td class="num">150</td><td>suporte</td><td>Atrair criaturas em área maior.</td></tr>
+      <tr><td>Charge</td><td><code>utani tempo hur</code></td><td class="num">25</td><td>suporte</td><td>Reposicionamento e fuga.</td></tr>
+      <tr><td>Avatar of Steel</td><td><code>uteta res eq</code></td><td class="num">Wheel</td><td>suporte</td><td>Perk de revelação; janela de proteção e dano.</td></tr>
+    </tbody>
+    <caption>Custos de mana e cooldowns mudam com atualizações de balanceamento e não foram fixados aqui; confira os valores atuais na biblioteca de magias do site oficial.</caption>
+  </table>
+
+  <h2>Nota metodológica</h2>
+  <p>As faixas de experiência por hora são estimativas conservadoras para caça solo, construídas a partir de relatos de jogadores e de agregadores comunitários de spawns, e devem ser entendidas como ordem de grandeza. Elas variam com o nível de skill, o equipamento, a ocupação do spawn e a regularidade da rotação. Os parâmetros de vida, mana, capacidade e experiência foram calculados pelas fórmulas oficiais. Mecânicas como Wheel of Destiny, charms e efeitos de tier da Forge passam por ajustes periódicos, de modo que a leitura das notas de atualização mais recentes deve preceder mudanças grandes de build.</p>
+
+  <h2>Referências</h2>
+  <ol class="refs">
+    <li>CIPSOFT. <i>Tibia: Library, Spells</i>. Disponível em: tibia.com/library/?subtopic=spells.</li>
+    <li>TIBIAWIKI. <i>Annihilation</i>; <i>Action Bars</i>; <i>Augments</i>; <i>Money Spent per Hit Point</i>. Disponível em: tibia.fandom.com.</li>
+    <li>TIBIAQA. <i>How does multi action hotkeys work</i>; <i>When should I use exori min and exori mas at my EK's spell rotation</i>; <i>Which major/minor charms are worth unlocking up to stage 3</i>; <i>What are all changes in the knight's skill wheel with the rebalancing</i>. Disponível em: tibiaqa.com.</li>
+    <li>TIBIAVAULT. <i>Best Tibia Hunting Spots Guide</i>; <i>Buried Cathedral</i>; <i>Oramond Minos</i>. Disponível em: tibiavault.com/hunting-spots.</li>
+    <li>TIBIABUDDY. <i>Tibia Hunt Finder</i> e <i>Knight Hunting Guide 2026</i>. Disponível em: tibiabuddy.com.</li>
+    <li>TIBIASTATS. <i>Where to hunt in Tibia</i>. Disponível em: tibiastats.pl/en/hunting-places.</li>
+    <li>TIBIAROUTE. <i>Improved Object Targeting and Multiaction Button</i>. Disponível em: tibiaroute.com.</li>
+  </ol>
+</section>
+
+</body>
+</html>

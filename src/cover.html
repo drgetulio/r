@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Elite Knight 230 a 300</title>
+<style>
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover {
+    width: 210mm; height: 297mm;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 78% 12%, rgba(169,128,47,0.28), transparent 55%),
+      radial-gradient(ellipse at 10% 95%, rgba(122,30,30,0.55), transparent 60%),
+      linear-gradient(160deg, #1b1716 0%, #241b1a 45%, #140f0f 100%);
+    color: #f3ece0;
+    font-family: "Inter", sans-serif;
+  }
+  .frame {
+    position: absolute; inset: 14mm;
+    border: 1px solid rgba(169,128,47,0.55);
+  }
+  .frame::after {
+    content: ""; position: absolute; inset: 3mm;
+    border: 1px solid rgba(169,128,47,0.22);
+  }
+  .content { position: absolute; left: 28mm; right: 28mm; top: 52mm; }
+  .kicker {
+    font-size: 9pt; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #c9a560; font-weight: 600;
+  }
+  h1 {
+    font-family: "Inter Display", "Inter", sans-serif;
+    font-size: 46pt; line-height: 1.0; margin: 8mm 0 0; font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  h1 em { font-style: normal; color: #c9a560; }
+  .sub {
+    font-family: "Bitstream Charter", serif;
+    font-size: 15pt; line-height: 1.4; margin-top: 9mm; color: #ddd2c0;
+    max-width: 135mm; font-style: italic;
+  }
+  .rule { width: 34mm; height: 3px; background: #a9802f; margin: 12mm 0 10mm; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 10mm; max-width: 150mm; }
+  .grid div { font-size: 9pt; color: #cfc3b0; line-height: 1.45; }
+  .grid b { display: block; color: #f3ece0; font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.5mm; }
+  .sword {
+    position: absolute; right: 22mm; top: 34mm; width: 46mm; opacity: 0.9;
+  }
+  .foot {
+    position: absolute; left: 28mm; right: 28mm; bottom: 26mm;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 8.4pt; color: #a99e8d; letter-spacing: 0.04em;
+  }
+  .foot .lv {
+    font-family: "JetBrains Mono", monospace; font-size: 30pt; font-weight: 800; color: rgba(201,165,96,0.9);
+    letter-spacing: -0.02em;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="frame"></div>
+  <svg class="sword" viewBox="0 0 120 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="blade" x1="0" x2="1">
+        <stop offset="0" stop-color="#e9e2d6"/>
+        <stop offset="0.5" stop-color="#ffffff"/>
+        <stop offset="1" stop-color="#9c958b"/>
+      </linearGradient>
+    </defs>
+    <polygon points="60,6 70,26 70,205 50,205 50,26" fill="url(#blade)" opacity="0.85"/>
+    <line x1="60" y1="22" x2="60" y2="200" stroke="#8a8378" stroke-width="1.2"/>
+    <rect x="18" y="205" width="84" height="11" rx="4" fill="#a9802f"/>
+    <rect x="53" y="216" width="14" height="52" rx="3" fill="#5a2a22"/>
+    <circle cx="60" cy="278" r="11" fill="#a9802f"/>
+  </svg>
+  <div class="content">
+    <div class="kicker">Guia técnico de progressão</div>
+    <h1>Elite Knight<br><em>do nível 230<br>ao 300</em></h1>
+    <div class="sub">Dez estratégias operacionais para elevar a experiência por hora sem abrir mão da segurança: atalhos, rotações, hunts, compras e gestão de risco.</div>
+    <div class="rule"></div>
+    <div class="grid">
+      <div><b>Escopo</b>Caça solo, com alternativas de grupo; mundos Optional PvP e Open PvP.</div>
+      <div><b>Cliente</b>Barras de ação nativas, multi-ações e analisadores de sessão.</div>
+      <div><b>Meta de XP</b>243,5 milhões de pontos entre os níveis 230 e 300.</div>
+      <div><b>Método</b>Fundamento, passos de implementação e indicador de verificação em cada estratégia.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div>Edição de outubro de 2026</div>
+    <div class="lv">230 → 300</div>
+  </div>
+</div>
+</body>
+</html>
