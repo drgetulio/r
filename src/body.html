@@ -56,51 +56,87 @@
 </section>
 
 <!-- ============ ESTRATÉGIA 1 ============ -->
-<section class="chapter compact">
+<section class="chapter">
   <div class="strategy-head">
     <div class="strategy-num">01</div>
     <div><div class="kicker">Estratégia</div><h1>Arquitetura de atalhos</h1></div>
   </div>
-  <p class="lead">O teclado como painel: cada região tem uma função e a mão encontra a tecla certa sem ajuda dos olhos.</p>
+  <p class="lead">Cada tecla tem uma palavra associada. Quem lembra a palavra lembra a tecla, e a mão esquerda nunca precisa abandonar o WASD em combate.</p>
 
   <div class="objective">
-    <div><b>Objetivo</b><span>Reduzir o tempo entre a percepção do perigo e a resposta, eliminando erros de tecla em momentos de pressão.</span></div>
-    <div><b>Fundamento</b><span>Agrupar ações por função (ataque, cura, suporte, equipamento) cria memória motora estável e evita que uma tecla de ataque seja pressionada quando a necessidade é curar.</span></div>
+    <div><b>Objetivo</b><span>Cobrir todas as ações úteis da caça com atalhos fáceis de memorizar, sem conflito com o movimento em WASD.</span></div>
+    <div><b>Fundamento</b><span>Associação por letra (R de Rope, V de Vida) e uma regra única para o Shift: a mesma letra com Shift executa a versão mais forte ou complementar da ação.</span></div>
   </div>
 
-  <h3>Mapa recomendado (mão esquerda em WASD, mão direita no mouse)</h3>
-  <div class="keyboard">
-    <div class="key atk"><span class="k">1</span><span class="a">Multi-ação: área cercado</span></div>
-    <div class="key atk"><span class="k">2</span><span class="a">Multi-ação: área alinhada</span></div>
-    <div class="key atk"><span class="k">3</span><span class="a">Multi-ação: alvo único e boss</span></div>
-    <div class="key atk"><span class="k">4</span><span class="a">exori gran ico (manual)</span></div>
-    <div class="key atk"><span class="k">5</span><span class="a">exori amp kor (quando liberado)</span></div>
-    <div class="key atk"><span class="k">X</span><span class="a">exori hur (alvo à distância)</span></div>
+  <h3>Mapa completo (mão esquerda em WASD, mão direita no mouse)</h3>
+  <div class="keyboard mnemo">
+    <div class="key atk"><span class="k">1</span><b class="m">Ao redor</b><span class="a">Multi-ação: área cercado</span></div>
+    <div class="key atk"><span class="k">2</span><b class="m">À frente</b><span class="a">Multi-ação: pack alinhado</span></div>
+    <div class="key atk"><span class="k">3</span><b class="m">Alvo único</b><span class="a">Multi-ação: alvo e boss</span></div>
+    <div class="key atk"><span class="k">4</span><b class="m">Aniquilar</b><span class="a">exori gran ico</span></div>
+    <div class="key atk"><span class="k">5</span><b class="m">Executar</b><span class="a">exori amp kor (Wheel)</span></div>
+    <div class="key atk"><span class="k">6</span><b class="m">Arremesso</b><span class="a">exori hur</span></div>
 
-    <div class="key heal"><span class="k">Espaço</span><span class="a">exura ico; no 300, exura med ico</span></div>
-    <div class="key heal"><span class="k">R</span><span class="a">Ultimate Health Potion em si</span></div>
-    <div class="key heal"><span class="k">F</span><span class="a">Strong Mana Potion em si</span></div>
-    <div class="key heal"><span class="k">V</span><span class="a">Supreme Health Potion em si</span></div>
-    <div class="key heal"><span class="k">T</span><span class="a">exura gran ico (emergência)</span></div>
-    <div class="key heal"><span class="k">Shift+F</span><span class="a">utura gran (entre packs)</span></div>
+    <div class="key heal"><span class="k">Espaço</span><b class="m">Cura contínua</b><span class="a">exura ico; no 300, exura med ico</span></div>
+    <div class="key heal"><span class="k">Shift+Espaço</span><b class="m">Cura forte</b><span class="a">exura gran ico</span></div>
+    <div class="key heal"><span class="k">V</span><b class="m">Vida</b><span class="a">Ultimate Health Potion em si</span></div>
+    <div class="key heal"><span class="k">Shift+V</span><b class="m">Vida forte</b><span class="a">Supreme Health Potion em si</span></div>
+    <div class="key heal"><span class="k">F</span><b class="m">Fluido de mana</b><span class="a">Strong Mana Potion em si</span></div>
+    <div class="key heal"><span class="k">U</span><b class="m">Utura</b><span class="a">utura gran (entre packs)</span></div>
 
-    <div class="key sup"><span class="k">F1</span><span class="a">utito tempo</span></div>
-    <div class="key sup"><span class="k">F2</span><span class="a">utamo tempo</span></div>
-    <div class="key sup"><span class="k">F3</span><span class="a">exeta res</span></div>
-    <div class="key sup"><span class="k">F4</span><span class="a">exeta amp res</span></div>
-    <div class="key sup"><span class="k">G</span><span class="a">utani tempo hur (fuga e reposicionamento)</span></div>
-    <div class="key sup"><span class="k">B</span><span class="a">utani hur</span></div>
+    <div class="key sup"><span class="k">B</span><b class="m">Blood Rage</b><span class="a">utito tempo</span></div>
+    <div class="key sup"><span class="k">Shift+B</span><b class="m">Bloqueio</b><span class="a">utamo tempo (Protector)</span></div>
+    <div class="key sup"><span class="k">X</span><b class="m">eXeta</b><span class="a">exeta res</span></div>
+    <div class="key sup"><span class="k">Shift+X</span><b class="m">eXeta ampla</b><span class="a">exeta amp res</span></div>
+    <div class="key sup"><span class="k">G</span><b class="m">Galope</b><span class="a">utani hur (tira lentidão)</span></div>
+    <div class="key sup"><span class="k">Shift+G</span><b class="m">Galope forte</b><span class="a">utani tempo hur (fuga)</span></div>
 
-    <div class="key eq"><span class="k">Shift+1</span><span class="a">Equipar Stone Skin Amulet</span></div>
-    <div class="key eq"><span class="k">Shift+2</span><span class="a">Equipar Might Ring</span></div>
-    <div class="key eq"><span class="k">Shift+3</span><span class="a">Recolocar amuleto e anel de caça</span></div>
-    <div class="key eq"><span class="k">Shift+Espaço</span><span class="a">uteta res eq (Avatar of Steel)</span></div>
-    <div class="key eq"><span class="k">Shift+V</span><span class="a">Rotworm Stew ou Hydra Tongue Salad</span></div>
-    <div class="key eq"><span class="k">Tab</span><span class="a">Selecionar próximo alvo</span></div>
+    <div class="key eq"><span class="k">T</span><b class="m">Transformação</b><span class="a">uteta res eq (Avatar of Steel)</span></div>
+    <div class="key eq"><span class="k">Shift+1</span><b class="m">Pescoço</b><span class="a">Equipar Stone Skin Amulet</span></div>
+    <div class="key eq"><span class="k">Shift+2</span><b class="m">Dedo</b><span class="a">Equipar Might Ring</span></div>
+    <div class="key eq"><span class="k">Shift+3</span><b class="m">Voltar</b><span class="a">Recolocar amuleto e anel de caça</span></div>
+    <div class="key eq"><span class="k">Ctrl+V</span><b class="m">Vida cheia</b><span class="a">Rotworm Stew</span></div>
+    <div class="key eq"><span class="k">Tab</span><b class="m">Trocar alvo</b><span class="a">Selecionar próximo alvo</span></div>
+
+    <div class="key util"><span class="k">R</span><b class="m">Rope</b><span class="a">Corda (usar com mira)</span></div>
+    <div class="key util"><span class="k">P</span><b class="m">Pá</b><span class="a">Shovel (usar com mira)</span></div>
+    <div class="key util"><span class="k">Shift+P</span><b class="m">Picareta</b><span class="a">Pick (usar com mira)</span></div>
+    <div class="key util"><span class="k">L</span><b class="m">Loot</b><span class="a">Coletar loot dos corpos próximos</span></div>
+    <div class="key util"><span class="k">Shift+L</span><b class="m">Luz</b><span class="a">utevo gran lux</span></div>
+    <div class="key util"><span class="k">Shift+F</span><b class="m">Fome</b><span class="a">Comer alimento comum</span></div>
+
+    <div class="key util"><span class="k">M</span><b class="m">Montaria</b><span class="a">Montar e desmontar</span></div>
+    <div class="key util"><span class="k">Shift+M</span><b class="m">Machete</b><span class="a">Cortar mato (usar com mira)</span></div>
+    <div class="key util"><span class="k">Ctrl+H</span><b class="m">Hydra</b><span class="a">Hydra Tongue Salad (remove condições)</span></div>
+    <div class="key util"><span class="k">Ctrl+T</span><b class="m">Treino</b><span class="a">Exercise weapon no dummy</span></div>
+    <div class="key util"><span class="k">Esc</span><b class="m">Escapar</b><span class="a">Parar ataque (padrão do cliente)</span></div>
+    <div class="key free"><span class="k">Q E Z C</span><b class="m">Diagonais</b><span class="a">Sem atalho; reservadas ao movimento</span></div>
   </div>
-  <div class="legend"><i style="background:#fcf4f3;border:1px solid #c98f8f"></i>Ataque <i style="background:#f2f8f4;border:1px solid #93b9a0"></i>Cura <i style="background:#fbf7ec;border:1px solid #c4ac74"></i>Suporte <i style="background:#f2f5f8;border:1px solid #9aa7b6"></i>Equipamento e utilidades</div>
+  <div class="legend"><i style="background:#fcf4f3;border:1px solid #c98f8f"></i>Ataque <i style="background:#f2f8f4;border:1px solid #93b9a0"></i>Cura <i style="background:#fbf7ec;border:1px solid #c4ac74"></i>Suporte <i style="background:#f2f5f8;border:1px solid #9aa7b6"></i>Emergência e alvo <i style="background:#f4f1f8;border:1px solid #a99bc0"></i>Utilidades</div>
 
-  <p><b>Lógica por dedo.</b> Com anelar, médio e indicador em A, W, S e D, apenas o polegar e o mínimo ficam livres enquanto o personagem anda. Por isso a cura por magia está no <kbd>Espaço</kbd> (polegar) e o alvo e os modificadores em <kbd>Tab</kbd> e <kbd>Shift</kbd> (mínimo). As poções formam a coluna do indicador, que sai do D com um movimento curto: <kbd>R</kbd> para vida, <kbd>F</kbd> para mana e <kbd>V</kbd> para vida forte. O ataque fica nos números porque é usado com o personagem parado no pack, quando os dedos deixam o WASD. As teclas <kbd>Q</kbd>, <kbd>E</kbd>, <kbd>Z</kbd> e <kbd>C</kbd> permanecem sem atalho, pois o cliente as usa como diagonais.</p>
+</section>
+
+<section class="chapter compact">
+  <h2 style="margin-top:0">Como memorizar e usar o mapa</h2>
+
+  <h3>As três regras de lembrança</h3>
+  <ol class="steps">
+    <li><b>A letra é a inicial da palavra.</b> R de Rope, P de Pá, L de Loot, M de Montaria, V de Vida, F de Fluido de mana, B de Blood Rage, X de eXeta, G de Galope, T de Transformação, U de Utura. Na dúvida, diga a palavra mentalmente e a tecla aparece.</li>
+    <li><b>Shift é a versão mais forte ou o complemento.</b> Vida e Vida forte (<kbd>V</kbd> e <kbd>Shift+V</kbd>), Galope e Galope forte (<kbd>G</kbd> e <kbd>Shift+G</kbd>), Cura contínua e Cura forte (<kbd>Espaço</kbd> e <kbd>Shift+Espaço</kbd>), Blood Rage e Bloqueio (<kbd>B</kbd> e <kbd>Shift+B</kbd>), Pá e Picareta (<kbd>P</kbd> e <kbd>Shift+P</kbd>), Loot e Luz (<kbd>L</kbd> e <kbd>Shift+L</kbd>).</li>
+    <li><b>Números atacam, do mais amplo ao mais concentrado.</b> <kbd>1</kbd> atinge tudo ao redor, <kbd>2</kbd> o que está à frente, <kbd>3</kbd> um único alvo; <kbd>4</kbd> é o golpe único mais forte, <kbd>5</kbd> e <kbd>6</kbd> são os arremessos. Com Shift, os números trocam o equipamento de emergência na ordem do corpo: <kbd>Shift+1</kbd> pescoço, <kbd>Shift+2</kbd> dedo, <kbd>Shift+3</kbd> volta ao normal.</li>
+  </ol>
+
+  <h3>Divisão entre as mãos</h3>
+  <table>
+    <thead><tr><th>Dedo ou mão</th><th>Teclas</th><th>Por que ali</th></tr></thead>
+    <tbody>
+      <tr><td>Polegar esquerdo</td><td><kbd>Espaço</kbd>, <kbd>Shift+Espaço</kbd></td><td>Único dedo sempre livre ao andar; leva a cura mais usada.</td></tr>
+      <tr><td>Mínimo esquerdo</td><td><kbd>Tab</kbd>, <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, <kbd>Esc</kbd></td><td>Também fica livre ao andar; segura os modificadores.</td></tr>
+      <tr><td>Indicador esquerdo</td><td><kbd>R</kbd>, <kbd>T</kbd>, <kbd>F</kbd>, <kbd>G</kbd>, <kbd>V</kbd>, <kbd>B</kbd></td><td>Sai do D com movimento curto; concentra poções e suporte.</td></tr>
+      <tr><td>Dedos sobre W, A e S</td><td><kbd>1</kbd> a <kbd>6</kbd>, <kbd>X</kbd></td><td>Ataques usados com o personagem parado no pack.</td></tr>
+      <tr><td>Mão direita</td><td>mouse; <kbd>U</kbd>, <kbd>P</kbd>, <kbd>L</kbd>, <kbd>M</kbd>, <kbd>Ctrl+H</kbd></td><td>Ações fora do combate; a mão sai do mouse por um instante.</td></tr>
+    </tbody>
+  </table>
 
   <h3>Configuração das multi-ações</h3>
   <p>O cliente aceita até três ações em um único botão da barra de ação (clique direito e opção de atribuir multi-ação). A cada acionamento, o botão executa a primeira ação fora de cooldown, o que transforma a rotação inteira em uma só tecla.</p>
@@ -113,14 +149,14 @@
     </tbody>
   </table>
 
-  <h3>Ajustes do cliente que fazem diferença</h3>
+  <h3>Ajustes do cliente</h3>
   <ol class="steps">
-    <li>Configure todas as poções como <b>usar em si mesmo</b> (a mira manual custa tempo e gera erros) e mantenha a barra de ataque, com cooldowns visíveis, logo acima da janela do jogo.</li>
-    <li>Mantenha o chat desligado com movimento em WASD. Com o chat ligado, as letras viram texto e o personagem para de andar; use <kbd>Enter</kbd> apenas para escrever e volte ao modo de caça logo depois.</li>
+    <li>Poções e alimentos como <b>usar em si mesmo</b>; corda, pá, picareta e machete como <b>usar com mira</b>. Com uma ferramenta multiuso, as teclas <kbd>R</kbd>, <kbd>P</kbd>, <kbd>Shift+P</kbd> e <kbd>Shift+M</kbd> podem apontar para o mesmo item.</li>
+    <li>Chat desligado durante a caça; <kbd>Enter</kbd> apenas para escrever, voltando ao modo de caça logo depois.</li>
+    <li>Antes de gravar o mapa, confira se alguma combinação já tem função padrão no cliente (por exemplo, <kbd>Ctrl+L</kbd> encerra a sessão) e mantenha essas combinações livres.</li>
   </ol>
 
-
-  <div class="kpi"><b>Indicador</b><span>Em dez minutos de caça, nenhuma tecla errada e nenhuma poção desperdiçada por mira. Se houver erros, reduza o número de atalhos ativos antes de acrescentar novos.</span></div>
+  <div class="kpi"><b>Indicador</b><span>Em dez minutos de caça, nenhuma tecla errada e nenhuma poção desperdiçada. Treine o mapa em uma hunt fácil antes de levá-lo para spawns de risco.</span></div>
 </section>
 
 <!-- ============ ESTRATÉGIA 2 ============ -->
@@ -137,7 +173,7 @@
   </div>
 
   <h3>O combo básico</h3>
-  <p>Como os três grupos são independentes, cada janela de 2 segundos comporta uma magia de ataque, até duas magias de cura e até duas poções. Na prática, o ritmo de caça de um Elite Knight bem treinado é uma sequência curta e repetida: <kbd>1</kbd> ou <kbd>2</kbd> (ataque), <kbd>Espaço</kbd> (cura por magia, com o polegar) e <kbd>F</kbd> ou <kbd>R</kbd> (poção conforme a necessidade). Quem pressiona apenas o ataque e cura somente quando a vida cai está desperdiçando metade da capacidade de sustentação do personagem.</p>
+  <p>Como os três grupos são independentes, cada janela de 2 segundos comporta uma magia de ataque, até duas magias de cura e até duas poções. Na prática, o ritmo de caça de um Elite Knight bem treinado é uma sequência curta e repetida: <kbd>1</kbd> ou <kbd>2</kbd> (ataque), <kbd>Espaço</kbd> (cura por magia, com o polegar) e <kbd>F</kbd> ou <kbd>V</kbd> (poção conforme a necessidade). Quem pressiona apenas o ataque e cura somente quando a vida cai está desperdiçando metade da capacidade de sustentação do personagem.</p>
 
   <h3>Rotação para criaturas ao redor (tecla 1)</h3>
   <div class="timeline">
@@ -192,7 +228,7 @@
   </div>
 
   <table>
-    <thead><tr><th>Faixa de vida</th><th>Exemplo no nível 250</th><th>Magia de cura (Espaço, T)</th><th>Poção (R, F, V)</th><th>Conduta</th></tr></thead>
+    <thead><tr><th>Faixa de vida</th><th>Exemplo no nível 250</th><th>Magia de cura (Espaço e Shift+Espaço)</th><th>Poção (F, V e Shift+V)</th><th>Conduta</th></tr></thead>
     <tbody>
       <tr><td><span class="tag low">acima de 85%</span></td><td>mais de 3.240</td><td>exura ico se houver dano contínuo</td><td>Strong Mana Potion se a mana estiver abaixo de 80%</td><td>Rotação completa, Blood Rage ativo.</td></tr>
       <tr><td><span class="tag low">70% a 85%</span></td><td>2.670 a 3.240</td><td>exura ico a cada segundo</td><td>Strong Mana Potion</td><td>Mantenha o lure.</td></tr>
@@ -251,7 +287,7 @@
   <h3>Como executar</h3>
   <ol class="steps">
     <li><b>Grimvale como hunt principal.</b> Dano físico previsível e loot de valor sustentam a fase. Coloque a Prey de experiência na criatura mais numerosa; nos períodos de lua cheia, a superfície recebe mais criaturas e tende a render mais.</li>
-    <li><b>Draken Walls e Lizard City como hunts de lucro.</b> Ambas ficam em Zao e pedem proteção de fogo. Os corredores favorecem a tecla de pack alinhado (<kbd>2</kbd>); atenção à paralisia ocasional dos drakens, removida com <kbd>B</kbd>.</li>
+    <li><b>Draken Walls e Lizard City como hunts de lucro.</b> Ambas ficam em Zao e pedem proteção de fogo. Os corredores favorecem a tecla de pack alinhado (<kbd>2</kbd>); atenção à paralisia ocasional dos drakens, removida com <kbd>G</kbd>.</li>
     <li><b>Asura Palace como preparação.</b> É a mesma mecânica de dano do Asura Mirror, que será a hunt principal no fim do intervalo. Caçar ali desde já ensina o tamanho seguro de lure contra fogo e morte.</li>
     <li><b>Oramond, Hero Fortress e Grim Reapers para sessões curtas.</b> Rotas simples, dano estável e ótima oportunidade para praticar a cura em camadas sem picos de dano.</li>
     <li><b>Lure de três a cinco criaturas.</b> Nesta fase, o ganho de XP de lures maiores raramente compensa o consumo de Supreme Health Potion.</li>
@@ -313,7 +349,7 @@
   <h3>Como executar</h3>
   <ol class="steps">
     <li><b>Werehyaenas e Werelions como hunts de referência.</b> O pack se forma com facilidade e a tecla <kbd>1</kbd> trabalha no limite. Mate primeiro os shamans e as werelionesses, que concentram o dano mais forte, usando a tecla <kbd>3</kbd> quando estiverem isolados.</li>
-    <li><b>Banuta e Medusa Tower exigem disciplina de paralisia.</b> Mantenha <code>utani hur</code> em <kbd>B</kbd> para remover a lentidão e nunca passe de cinco criaturas quando medusas estiverem no pack. A proteção de terra é obrigatória.</li>
+    <li><b>Banuta e Medusa Tower exigem disciplina de paralisia.</b> Use <code>utani hur</code> (<kbd>G</kbd>) para remover a lentidão e nunca passe de cinco criaturas quando medusas estiverem no pack. A proteção de terra é obrigatória.</li>
     <li><b>Roshamuul West com lure controlado.</b> Os guzzlemaws causam picos de dano físico; trate cada pack como faixa amarela até conhecer a resposta do personagem. A Prey de redução de dano nessa criatura é especialmente valiosa.</li>
     <li><b>Glooth Factory, Kilmaresh e Spectres como alternativas.</b> Use-as quando as hunts principais estiverem ocupadas ou quando a criatura do dia coincidir com uma delas.</li>
     <li><b>Reavalie a cada cinco níveis.</b> Compare a XP por hora das duas melhores hunts pelo Hunting Session Analyser. A de maior XP só vira principal se o consumo de Supreme Health Potion não dobrar.</li>

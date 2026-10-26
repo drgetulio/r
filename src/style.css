@@ -332,3 +332,8 @@ code, .spell {
 
 .hunts { font-size: 8pt; }
 .hunts td:first-child { width: 22%; }
+
+.mnemo .key { min-height: 0; padding: 4px 6px 5px; }
+.key .m { display: block; font-size: 7.8pt; color: var(--wine); margin-top: 1px; }
+.key.util { border-color: #a99bc0; background: #f4f1f8; }
+.key.free { border-style: dashed; border-color: #c9c0b5; background: #fbfaf8; }
